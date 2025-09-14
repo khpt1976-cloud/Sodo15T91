@@ -761,6 +761,83 @@
 
             // Nội dung tài liệu
             const documentationContent = {
+                introduction: {
+                    title: "Giới thiệu về Dự án",
+                    content: `# Giới thiệu về Dự án
+
+## 1. Tổng quan Dự án
+
+Dự án này được xây dựng trên nền tảng kiến trúc Microservice hiện đại, nhằm cung cấp một hệ thống linh hoạt, có khả năng mở rộng và dễ bảo trì. Dựa trên sơ đồ kiến trúc đã phân tích, dự án bao gồm nhiều dịch vụ độc lập như Quản lý Sản phẩm, Giỏ hàng, Thanh toán, Quản lý Người dùng, Tin tức, và các dịch vụ chuyên biệt khác (ví dụ: Tính toán Thiết kế, Bóng đá, Nhật ký thi công, Chatbot, Quản lý Đại lý, Chính sách Đại lý). Hệ thống được thiết kế để phục vụ cả người dùng cuối (User Frontend) và quản trị viên (Admin Frontend) thông qua các API Gateway riêng biệt.
+
+**Mục tiêu chính:**
+
+*   Cung cấp một nền tảng dịch vụ đa dạng, đáp ứng nhiều nhu cầu khác nhau của người dùng.
+*   Đảm bảo tính ổn định, bảo mật và hiệu suất cao.
+*   Dễ dàng mở rộng và phát triển các tính năng mới mà không ảnh hưởng đến toàn bộ hệ thống.
+*   Tối ưu hóa trải nghiệm người dùng và hiệu quả quản lý.
+
+## 2. Cách kinh doanh của Dự án
+
+Dựa trên cấu trúc Microservice đa dạng, dự án có thể áp dụng nhiều mô hình kinh doanh khác nhau, tùy thuộc vào trọng tâm và đối tượng khách hàng mục tiêu:
+
+*   **Mô hình SaaS (Software as a Service):** Cung cấp các dịch vụ chuyên biệt (ví dụ: Dịch vụ Tính toán Thiết kế, Dịch vụ Quản lý Đại lý) dưới dạng đăng ký hàng tháng/năm cho các doanh nghiệp hoặc cá nhân có nhu cầu.
+*   **Mô hình Thương mại điện tử (E-commerce):** Nếu trọng tâm là các dịch vụ Giỏ hàng, Sản phẩm, Thanh toán, dự án có thể hoạt động như một nền tảng bán hàng trực tuyến cho các sản phẩm/dịch vụ của riêng mình hoặc của bên thứ ba (marketplace).
+*   **Mô hình Quảng cáo/Nội dung:** Với Dịch vụ Tin tức và các dịch vụ tương tác (Chatbot), dự án có thể tạo ra doanh thu từ quảng cáo hiển thị, nội dung trả phí hoặc các gói dịch vụ cao cấp.
+*   **Mô hình Phí giao dịch:** Đối với Dịch vụ Thanh toán, có thể thu phí trên mỗi giao dịch thành công.
+*   **Mô hình Freemium:** Cung cấp các tính năng cơ bản miễn phí và tính phí cho các tính năng nâng cao hoặc gói dịch vụ cao cấp hơn.
+
+## 3. Ước tính chi phí để thực hiện
+
+Việc ước tính chi phí cho một dự án Microservice cần xem xét nhiều yếu tố. Với việc triển khai trên một VPS đơn lẻ ban đầu, chi phí sẽ được tối ưu hóa, nhưng vẫn cần tính toán cho các giai đoạn phát triển và vận hành:
+
+*   **Chi phí Hạ tầng (VPS):**
+    *   Gói VPS hiện tại của bạn: Khoảng 339.000 VNĐ/tháng (tương đương ~14 USD/tháng).
+    *   Chi phí tên miền (Domain Name): Khoảng 200.000 - 500.000 VNĐ/năm.
+    *   Chứng chỉ SSL (nếu không dùng Let's Encrypt miễn phí): Có thể từ vài trăm nghìn đến vài triệu VNĐ/năm.
+    *   **Lưu ý:** Khi dự án phát triển, bạn có thể cần nâng cấp VPS hoặc chuyển sang các nền tảng Cloud lớn hơn, chi phí hạ tầng sẽ tăng đáng kể.
+*   **Chi phí Phát triển:**
+    *   **Nhân lực:** Đây là chi phí lớn nhất. Nếu bạn tự phát triển, chi phí là thời gian và công sức của bạn. Nếu thuê ngoài hoặc có đội ngũ, chi phí sẽ bao gồm lương cho các vị trí Backend Developer, Frontend Developer, DevOps Engineer, QA Engineer, UI/UX Designer, Product Manager.
+    *   **Công cụ và phần mềm:** Các công cụ phát triển, IDE, phần mềm quản lý dự án (nếu có).
+*   **Chi phí Vận hành và Bảo trì:**
+    *   Thời gian và công sức để giám sát hệ thống, cập nhật phần mềm, xử lý lỗi, sao lưu dữ liệu.
+    *   Chi phí cho các dịch vụ bên thứ ba (nếu có) như dịch vụ gửi email, SMS, CDN, v.v.
+*   **Chi phí Marketing và Bán hàng:** Để đưa sản phẩm đến với người dùng.
+
+**Ước tính sơ bộ (cho giai đoạn khởi đầu với 1 người phát triển trên 1 VPS):**
+
+*   **Chi phí cố định hàng tháng:** ~350.000 VNĐ (chủ yếu là VPS).
+*   **Chi phí phát triển:** Thời gian của bạn (có thể kéo dài vài tháng đến 1 năm hoặc hơn tùy quy mô).
+
+## 4. Suy đoán về Thu nhập
+
+Thu nhập sẽ phụ thuộc trực tiếp vào mô hình kinh doanh được lựa chọn và khả năng thu hút người dùng/khách hàng. Một số kịch bản:
+
+*   **Doanh thu từ đăng ký/SaaS:** Nếu mỗi dịch vụ chuyên biệt thu phí 50.000 - 200.000 VNĐ/tháng/người dùng, với 100 khách hàng, doanh thu có thể đạt 5 - 20 triệu VNĐ/tháng.
+*   **Doanh thu từ thương mại điện tử:** Tỷ lệ chuyển đổi và giá trị đơn hàng trung bình sẽ quyết định. Ví dụ, với 1000 lượt truy cập/ngày và tỷ lệ chuyển đổi 1%, giá trị đơn hàng trung bình 300.000 VNĐ, doanh thu có thể là 3 triệu VNĐ/ngày (90 triệu VNĐ/tháng).
+*   **Doanh thu từ quảng cáo:** Phụ thuộc vào lượng truy cập và tương tác của người dùng. Cần một lượng lớn người dùng để tạo ra doanh thu đáng kể.
+
+**Lưu ý:** Đây chỉ là suy đoán ban đầu. Thu nhập thực tế sẽ cần được xác định thông qua nghiên cứu thị trường sâu hơn, thử nghiệm sản phẩm (MVP - Minimum Viable Product) và chiến lược marketing hiệu quả.
+
+## 5. Nhận định về Xu hướng
+
+Dự án được xây dựng trên kiến trúc Microservice, đây là một xu hướng công nghệ mạnh mẽ và tiếp tục phát triển trong ngành phần mềm. Việc áp dụng kiến trúc này mang lại nhiều lợi thế:
+
+*   **Tính linh hoạt và khả năng mở rộng:** Cho phép dự án dễ dàng thích nghi với các yêu cầu thay đổi và mở rộng quy mô khi cần thiết.
+*   **Tốc độ phát triển nhanh:** Các nhóm nhỏ có thể làm việc độc lập trên từng dịch vụ, đẩy nhanh quá trình phát triển và triển khai.
+*   **Khả năng phục hồi:** Lỗi ở một dịch vụ ít có khả năng ảnh hưởng đến toàn bộ hệ thống.
+*   **Công nghệ hiện đại:** Sử dụng Docker, Nginx, và các công nghệ liên quan giúp dự án luôn cập nhật với các tiêu chuẩn công nghiệp.
+
+Ngoài ra, các xu hướng khác mà dự án có thể tận dụng:
+
+*   **Trải nghiệm người dùng (UX) và giao diện người dùng (UI) tập trung:** Với các thành phần Frontend riêng biệt, dự án có thể tối ưu hóa trải nghiệm cho từng đối tượng.
+*   **Tích hợp AI/ML:** Dịch vụ Chatbot là một ví dụ, có thể mở rộng để tích hợp các tính năng AI/ML khác nhằm nâng cao giá trị sản phẩm.
+*   **Dữ liệu lớn (Big Data):** Với nhiều cơ sở dữ liệu độc lập, dự án có tiềm năng thu thập và phân tích lượng lớn dữ liệu để đưa ra các quyết định kinh doanh thông minh.
+
+Nhìn chung, dự án có nền tảng công nghệ vững chắc để phát triển trong bối cảnh thị trường số hóa ngày càng tăng. Thành công sẽ phụ thuộc vào việc xác định rõ ràng giá trị cốt lõi, khả năng tiếp cận thị trường và liên tục cải tiến sản phẩm.
+
+
+`
+                },
                 overview: {
                     title: "Kiến trúc Thư mục Dự án Microservice",
                     content: `# Kiến trúc Thư mục Dự án Microservice
@@ -779,870 +856,643 @@
 │   ├── chatbot-service/                        # Dịch vụ chatbot
 │   ├── payment-service/                        # Dịch vụ thanh toán
 │   ├── user-service/                           # Dịch vụ người dùng
-│   ├── shell-config-service/                   # Dịch vụ cấu hình shell
-│   ├── admin-service/                          # Dịch vụ quản trị hệ thống
+│   ├── admin-service/                          # Dịch vụ quản trị
 │   ├── agent-management-service/               # Dịch vụ quản lý đại lý
-│   └── agent-policy-service/                   # Dịch vụ chính sách đại lý
-│
+│   ├── agent-policy-service/                   # Dịch vụ chính sách đại lý
+│   └── shell-config-service/                   # Dịch vụ cấu hình shell
 ├── frontend/                                   # Chứa mã nguồn của tất cả các ứng dụng Frontend
-│   ├── shell-app-user/                         # Ứng dụng Frontend chính cho người dùng cuối
-│   ├── shell-app-admin/                        # Ứng dụng Frontend chính cho quản trị viên
-│   ├── shell-config-admin-frontend/            # Ứng dụng Frontend độc lập cho quản trị cấu hình Shell
-│   ├── cart-service-frontend/                  # Giao diện người dùng giỏ hàng
-│   ├── cart-service-admin/                     # Giao diện quản trị giỏ hàng
-│   ├── product-service-frontend/               # Giao diện người dùng sản phẩm
-│   ├── product-service-admin/                  # Giao diện quản trị sản phẩm
-│   ├── news-service-frontend/                  # Giao diện người dùng tin tức
-│   ├── news-service-admin/                     # Giao diện quản trị tin tức
-│   ├── design-calculation-frontend/            # Giao diện người dùng tính toán thiết kế
-│   ├── design-calculation-admin/               # Giao diện quản trị tính toán thiết kế
-│   ├── football-service-frontend/              # Giao diện người dùng bóng đá
-│   ├── football-service-admin/                 # Giao diện quản trị bóng đá
-│   ├── communication-log-frontend/             # Giao diện người dùng nhật ký thi công
-│   ├── communication-log-admin/                # Giao diện quản trị nhật ký thi công
-│   ├── chatbot-service-frontend/               # Giao diện người dùng chatbot
-│   ├── chatbot-service-admin/                  # Giao diện quản trị chatbot
-│   ├── payment-service-frontend/               # Giao diện người dùng thanh toán
-│   ├── payment-service-admin/                  # Giao diện quản trị thanh toán
-│   ├── user-service-frontend/                  # Giao diện người dùng
-│   ├── user-service-admin/                     # Giao diện quản trị người dùng
-│   ├── admin-service-frontend/                 # Giao diện người dùng quản trị
-│   ├── admin-service-admin/                    # Giao diện quản trị hệ thống
-│   ├── agent-management-frontend/              # Giao diện người dùng quản lý đại lý
-│   ├── agent-management-admin/                 # Giao diện quản trị quản lý đại lý
-│   ├── agent-policy-frontend/                  # Giao diện người dùng chính sách đại lý
-│   └── agent-policy-admin/                     # Giao diện quản trị chính sách đại lý
-│
-├── api-gateway/                                # Cấu hình và mã nguồn cho API Gateway
-│   ├── user-gateway/                           # API Gateway cho người dùng cuối
-│   └── admin-gateway/                          # API Gateway cho quản trị viên
-│
-├── shared/                                     # Chứa các thư viện, module dùng chung
-│   ├── common-models/                          # Các định nghĩa model dùng chung
-│   ├── utils/                                  # Các tiện ích chung
-│   └── config/                                 # Cấu hình chung
-│
-├── infrastructure/                             # Cấu hình và mã nguồn liên quan đến hạ tầng
-│   ├── kubernetes/                             # Cấu hình Kubernetes
-│   ├── terraform/                              # Mã Terraform để quản lý hạ tầng
-│   ├── ansible/                                # Playbook Ansible để cấu hình máy chủ
-│   ├── monitoring/                             # Cấu hình cho các công cụ giám sát
-│   └── logging/                                # Cấu hình cho hệ thống logging
-│
+│   ├── shell-app-user/                         # Shell App cho người dùng cuối
+│   ├── shell-app-admin/                        # Shell App cho quản trị viên
+│   ├── cart-service-frontend/                  # Frontend cho dịch vụ giỏ hàng
+│   ├── product-service-frontend/               # Frontend cho dịch vụ sản phẩm
+│   ├── news-service-frontend/                  # Frontend cho dịch vụ tin tức
+│   ├── design-calculation-frontend/            # Frontend cho dịch vụ tính toán thiết kế
+│   ├── football-service-frontend/              # Frontend cho dịch vụ bóng đá
+│   ├── communication-log-frontend/             # Frontend cho dịch vụ nhật ký thi công
+│   ├── chatbot-service-frontend/               # Frontend cho dịch vụ chatbot
+│   ├── payment-service-frontend/               # Frontend cho dịch vụ thanh toán
+│   ├── user-service-frontend/                  # Frontend cho dịch vụ người dùng
+│   ├── admin-service-frontend/                 # Frontend cho dịch vụ quản trị
+│   ├── agent-management-frontend/              # Frontend cho dịch vụ quản lý đại lý
+│   ├── agent-policy-frontend/                  # Frontend cho dịch vụ chính sách đại lý
+│   ├── shell-config-frontend/                  # Frontend cho dịch vụ cấu hình shell
+│   └── shell-config-admin-frontend/            # Frontend admin cho dịch vụ cấu hình shell
+├── infrastructure/                             # Chứa các file cấu hình hạ tầng
+│   ├── docker/                                 # Cấu hình Docker
+│   ├── nginx/                                  # Cấu hình Nginx (API Gateway/Reverse Proxy)
+│   ├── monitoring/                             # Cấu hình giám sát (Prometheus, Grafana)
+│   └── scripts/                                # Scripts triển khai và quản lý
+├── shared/                                     # Thư viện và tiện ích dùng chung
+│   ├── common-libs/                            # Thư viện chung
+│   ├── utils/                                  # Tiện ích chung
+│   └── types/                                  # Định nghĩa kiểu dữ liệu chung
 ├── docs/                                       # Tài liệu dự án
-│   ├── architecture/                           # Tài liệu kiến trúc
-│   ├── deployment/                             # Tài liệu triển khai
-│   └── README.md
-│
-├── scripts/                                    # Các script tự động hóa
-│   ├── ci-cd/                                  # Script cho CI/CD pipelines
-│   ├── deploy/                                 # Script triển khai
-│   └── setup/                                  # Script cài đặt môi trường
-│
-├── .gitignore                                  # Các file/thư mục bỏ qua bởi Git
-├── README.md                                   # File README tổng quan dự án
-└── docker-compose.yml                          # File Docker Compose cho môi trường phát triển
+├── tests/                                      # Tests tích hợp và end-to-end
+├── .github/                                    # GitHub Actions workflows
+├── docker-compose.yml                          # Cấu hình Docker Compose cho môi trường phát triển
+├── docker-compose.prod.yml                     # Cấu hình Docker Compose cho môi trường production
+├── .env.example                                # File mẫu biến môi trường
+├── .gitignore                                  # File gitignore
+├── README.md                                   # Tài liệu tổng quan dự án
+└── LICENSE                                     # Giấy phép dự án
 \`\`\`
 
-## Giải thích cấu trúc:
+## Chi tiết Cấu trúc từng Thành phần
 
-* **\`services/\`**: Chứa tất cả các microservice backend. Mỗi thư mục con là một microservice độc lập với mã nguồn, Dockerfile, và các file cấu hình riêng.
-* **\`frontend/\`**: Chứa tất cả các ứng dụng frontend. Mỗi thư mục con là một ứng dụng frontend độc lập, bao gồm cả Shell Config Admin Frontend được tách biệt.
-* **\`api-gateway/\`**: Chứa cấu hình và mã nguồn cho các API Gateway, phân tách giữa người dùng và quản trị.
-* **\`shared/\`**: Chứa các module, thư viện, hoặc định nghĩa dùng chung giữa các dịch vụ và ứng dụng để tránh trùng lặp mã.
-* **\`infrastructure/\`**: Chứa tất cả các cấu hình và mã nguồn liên quan đến hạ tầng, như Kubernetes manifests, Terraform scripts, Ansible playbooks, cấu hình monitoring và logging.
-* **\`docs/\`**: Chứa tất cả tài liệu của dự án, bao gồm tài liệu kiến trúc, triển khai, và các hướng dẫn khác.
-* **\`scripts/\`**: Chứa các script tự động hóa cho các tác vụ như CI/CD, triển khai, và thiết lập môi trường.
+### 1. Services (Backend Microservices)
 
-Cấu trúc này giúp duy trì sự rõ ràng, dễ dàng mở rộng và quản lý các thành phần trong một hệ thống microservice phức tạp.`
+Mỗi service trong thư mục \`services/\` có cấu trúc tương tự:
+
+\`\`\`
+service-name/
+├── src/                                        # Mã nguồn chính
+│   ├── controllers/                            # Controllers xử lý HTTP requests
+│   ├── services/                               # Business logic
+│   ├── models/                                 # Data models
+│   ├── routes/                                 # API routes
+│   ├── middleware/                             # Middleware functions
+│   ├── utils/                                  # Utility functions
+│   └── app.js                                  # Entry point
+├── tests/                                      # Unit tests và integration tests
+├── config/                                     # Configuration files
+├── Dockerfile                                  # Docker configuration
+├── package.json                                # Dependencies (Node.js)
+├── requirements.txt                            # Dependencies (Python)
+├── .env.example                                # Environment variables template
+└── README.md                                   # Service documentation
+\`\`\`
+
+### 2. Frontend Applications
+
+Mỗi frontend application có cấu trúc:
+
+\`\`\`
+frontend-app/
+├── src/                                        # Mã nguồn chính
+│   ├── components/                             # React/Vue components
+│   ├── pages/                                  # Page components
+│   ├── services/                               # API service calls
+│   ├── utils/                                  # Utility functions
+│   ├── styles/                                 # CSS/SCSS files
+│   └── index.js                                # Entry point
+├── public/                                     # Static assets
+├── tests/                                      # Frontend tests
+├── Dockerfile                                  # Docker configuration
+├── package.json                                # Dependencies
+├── .env.example                                # Environment variables template
+└── README.md                                   # Frontend documentation
+\`\`\`
+
+### 3. Infrastructure
+
+\`\`\`
+infrastructure/
+├── docker/
+│   ├── Dockerfile.base                         # Base Docker image
+│   └── docker-compose.override.yml             # Development overrides
+├── nginx/
+│   ├── nginx.conf                              # Main Nginx configuration
+│   ├── sites-enabled/                          # Site configurations
+│   └── ssl/                                    # SSL certificates
+├── monitoring/
+│   ├── prometheus.yml                          # Prometheus configuration
+│   ├── grafana/                                # Grafana dashboards
+│   └── alertmanager.yml                        # Alert configurations
+└── scripts/
+    ├── deploy.sh                               # Deployment script
+    ├── backup.sh                               # Backup script
+    └── health-check.sh                         # Health check script
+\`\`\`
+
+## Lợi ích của Cấu trúc này
+
+1. **Tách biệt rõ ràng**: Mỗi service và frontend có thư mục riêng, dễ quản lý
+2. **Khả năng mở rộng**: Dễ dàng thêm service mới mà không ảnh hưởng đến các service khác
+3. **Tái sử dụng**: Thư mục \`shared/\` chứa code dùng chung
+4. **DevOps friendly**: Cấu trúc hỗ trợ CI/CD và containerization
+5. **Tài liệu hóa tốt**: Mỗi thành phần có README riêng
+
+Cấu trúc này đảm bảo dự án có thể phát triển và bảo trì hiệu quả trong môi trường Microservice.`
                 },
                 details: {
-                    title: "Kiến trúc Chi tiết Các Ứng dụng Độc lập",
+                    title: "Chi tiết Các Ứng dụng Độc lập",
                     content: `# Kiến trúc Chi tiết Các Ứng dụng Độc lập
 
 Đây là tài liệu trình bày kiến trúc thư mục chi tiết cho từng "ứng dụng hoàn chỉnh có thể độc lập hoàn toàn" trong dự án Microservice của bạn. Mỗi phần dưới đây đại diện cho một lát cắt dọc (vertical slice) bao gồm Backend Service, Frontend Components (User và Admin nếu có), và Database tương ứng.
 
 ## 1. Ứng dụng Giỏ hàng (Cart Application)
 
-Ứng dụng Giỏ hàng bao gồm \`Cart Service\` (Backend), \`Cart Service Frontend\` (Giao diện người dùng) và \`Cart Service Admin\` (Giao diện quản trị), cùng với \`Cart DB\`.
+Ứng dụng Giỏ hàng bao gồm \`
+                },
+                'deployment-order': {
+                    title: "Thứ tự Triển khai Dự án Microservice",
+                    content: `# Thứ tự Triển khai Dự án Microservice
 
-\`\`\`
-/project-root
-├── services/
-│   └── cart-service/                               # Mã nguồn của Dịch vụ Giỏ hàng
-│       ├── src/                                    # Mã nguồn chính của dịch vụ
-│       │   ├── api/                                # Định nghĩa các API endpoints
-│       │   │   ├── cart_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/                               # Logic nghiệp vụ cốt lõi
-│       │   │   └── cart_service.py
-│       │   ├── models/                             # Định nghĩa các mô hình dữ liệu
-│       │   │   ├── cart_item.py
-│       │   │   └── user_cart.py
-│       │   ├── repositories/                       # Lớp tương tác với Cart DB
-│       │   │   └── cart_repository.py
-│       │   ├── utils/                              # Các hàm tiện ích chung
-│       │   │   └── error_handlers.py
-│       │   ├── config.py                           # Cấu hình của dịch vụ
-│       │   └── main.py                             # Điểm khởi đầu của ứng dụng
-│       ├── tests/                                  # Các bài kiểm thử
-│       ├── Dockerfile                              # Định nghĩa Docker image
-│       ├── requirements.txt                        # Thư viện Python
-│       ├── .env.example                            # File mẫu biến môi trường
-│       └── README.md
-│
-├── frontend/
-│   ├── cart-service-frontend/                      # Giao diện người dùng Giỏ hàng
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang giỏ hàng, trang thanh toán
-│   │   │   │   └── CartPage.js
-│   │   │   ├── services/                           # Tương tác với Cart Service API
-│   │   │   │   └── cart.api.js
-│   │   │   ├── store/
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── cart-service-admin/                         # Giao diện quản trị Giỏ hàng
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý đơn hàng, sản phẩm trong giỏ
-│       │   │   └── OrderManagementPage.js
-│       │   ├── services/                           # Tương tác với Cart Service API (Admin)
-│       │   │   └── admin.cart.api.js
-│       │   ├── store/
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Cart DB (được quản lý bởi cart-service)
-\`\`\`
+Tài liệu này tổng hợp các chiến lược triển khai dự án Microservice, bao gồm thứ tự triển khai tuần tự khi nguồn lực hạn chế (ví dụ: một người triển khai) và các phần có thể triển khai song song khi có đội ngũ.
 
-## 2. Ứng dụng Sản phẩm (Product Application)
+## 1. Thứ tự triển khai tuần tự cho một người
 
-Ứng dụng Sản phẩm bao gồm \`Product Service\` (Backend), \`Product Service Frontend\` và \`Product Service Admin\`, cùng với \`Product DB\`.
+Nếu chỉ có một người triển khai toàn bộ hệ thống này một cách tuần tự, thứ tự triển khai phải được ưu tiên dựa trên sự phụ thuộc và xây dựng nền tảng trước, sau đó mới đến các tính năng cụ thể. Một thứ tự logic và hiệu quả sẽ như sau:
 
-\`\`\`
-/project-root
-├── services/
-│   └── product-service/                            # Mã nguồn của Dịch vụ Sản phẩm
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── product_controller.js
-│       │   │   └── health_check_controller.js
-│       │   ├── core/
-│       │   │   └── product_service.js
-│       │   ├── models/
-│       │   │   └── product.js
-│       │   ├── repositories/                       # Lớp tương tác với Product DB
-│       │   │   └── product_repository.js
-│       │   ├── config.js
-│       │   └── app.js
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── package.json
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── product-service-frontend/                   # Giao diện người dùng Sản phẩm
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang danh sách sản phẩm, chi tiết sản phẩm
-│   │   │   │   └── ProductListPage.js
-│   │   │   ├── services/                           # Tương tác với Product Service API
-│   │   │   │   └── product.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── product-service-admin/                      # Giao diện quản trị Sản phẩm
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang thêm/sửa/xóa sản phẩm
-│       │   │   └── ProductEditorPage.js
-│       │   ├── services/                           # Tương tác với Product Service API (Admin)
-│       │   │   └── admin.product.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Product DB (được quản lý bởi product-service)
-\`\`\`
+### Giai đoạn 1: Xây dựng Nền tảng (Foundation)
 
-## 3. Ứng dụng Tin tức (News Application)
+Mục tiêu của giai đoạn này là tạo ra bộ khung xương cho toàn bộ hệ thống. Bạn cần những thành phần cốt lõi để các dịch vụ sau này có thể "cắm" vào.
 
-\`\`\`
-/project-root
-├── services/
-│   └── news-service/                               # Mã nguồn của Dịch vụ Tin tức
-│       ├── src/
-│       │   ├── handlers/
-│       │   │   ├── news_handler.go
-│       │   │   └── health_handler.go
-│       │   ├── domain/
-│       │   │   └── news.go
-│       │   ├── storage/                            # Lớp tương tác với News DB
-│       │   │   └── news_repository.go
-│       │   ├── config.go
-│       │   └── main.go
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── go.mod
-│       ├── go.sum
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── news-service-frontend/                      # Giao diện người dùng Tin tức
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang danh sách tin tức, chi tiết tin tức
-│   │   │   │   └── NewsListPage.js
-│   │   │   ├── services/                           # Tương tác với News Service API
-│   │   │   │   └── news.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── news-service-admin/                         # Giao diện quản trị Tin tức
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang thêm/sửa/xóa tin tức
-│       │   │   └── NewsEditorPage.js
-│       │   ├── services/                           # Tương tác với News Service API (Admin)
-│       │   │   └── admin.news.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: News DB (được quản lý bởi news-service)
-\`\`\`
+1.  **Infrastructure (Hạ tầng):** Thiết lập môi trường cloud (VPS), cài đặt hệ điều hành, cấu hình mạng cơ bản, tường lửa, SSH an toàn. Đây là bước đầu tiên và tiên quyết.
+2.  **User Service (Dịch vụ Người dùng):** Hầu hết mọi dịch vụ khác đều cần xác thực và quản lý người dùng. Do đó, `User Service` và `User DB` phải được xây dựng trước tiên. Đây là dịch vụ trung tâm.
+3.  **API Gateway (Cổng API):** Thiết lập `API Gateway User` và `API Gateway Admin` (sử dụng Nginx). Ban đầu, chỉ cần cấu hình để nó có thể giao tiếp với `User Service`. Cổng API sẽ là điểm vào duy nhất cho tất cả các yêu cầu sau này.
+4.  **Shell App (User/Admin):** Xây dựng hai ứng dụng frontend khung (`Shell App User` và `Shell App Admin`). Ban đầu, chúng chỉ cần có khả năng đăng nhập/đăng ký thông qua `User Service` và hiển thị một giao diện cơ bản.
+5.  **Message Broker & Cache (Cài đặt cơ bản):** Cài đặt `Message Broker` (ví dụ: RabbitMQ) và `Cache` (ví dụ: Redis) trên VPS. Chỉ cần cài đặt và đảm bảo chúng hoạt động, chưa cần tích hợp sâu.
 
-## 4. Ứng dụng Tính toán Thiết kế (Design Calculation Application)
+### Giai đoạn 2: Triển khai các Microservice cốt lõi theo từng lát cắt dọc
 
-\`\`\`
-/project-root
-├── services/
-│   └── design-calculation-service/                 # Mã nguồn của Dịch vụ Tính toán Thiết kế
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── calculation_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── calculation_engine.py           # Logic tính toán chính
-│       │   ├── models/
-│       │   │   └── design_params.py
-│       │   ├── repositories/                       # Lớp tương tác với Design Calculation DB
-│       │   │   └── calculation_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── design-calculation-frontend/                # Giao diện người dùng Tính toán Thiết kế
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang nhập thông số, hiển thị kết quả
-│   │   │   │   └── CalculationPage.js
-│   │   │   ├── services/                           # Tương tác với Design Calculation Service API
-│   │   │   │   └── calculation.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── design-calculation-admin/                   # Giao diện quản trị Tính toán Thiết kế
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý công thức, tham số
-│       │   │   └── FormulaManagementPage.js
-│       │   ├── services/                           # Tương tác với Design Calculation Service API (Admin)
-│       │   │   └── admin.calculation.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Design Calculation DB (được quản lý bởi design-calculation-service)
-\`\`\`
+Sau khi có nền tảng, bạn sẽ bắt đầu triển khai các Microservice theo từng "lát cắt dọc" (Backend Service + Database + Frontend tương ứng). Bắt đầu với các dịch vụ quan trọng nhất hoặc ít phụ thuộc nhất.
 
-## 5. Ứng dụng Bóng đá (Football Application)
+6.  **Product Service (Dịch vụ Sản phẩm):**
+    *   Xây dựng `Product Service` (Backend) và `Product DB`.
+    *   Cập nhật cấu hình Nginx (API Gateway) để định tuyến các yêu cầu đến `Product Service`.
+    *   Xây dựng `Product Service Frontend` (giao diện hiển thị sản phẩm) và `Product Service Admin` (giao diện quản lý sản phẩm).
+    *   Tích hợp các giao diện này vào `Shell App User` và `Shell App Admin`.
 
-Ứng dụng này bao gồm \`Football Service\` (Backend), \`Football Service Frontend\` và \`Football Service Admin\`, cùng với \`Football DB\`.
+7.  **Cart Service (Dịch vụ Giỏ hàng):**
+    *   Xây dựng `Cart Service` (Backend) và `Cart DB`.
+    *   Cập nhật cấu hình Nginx (API Gateway).
+    *   Xây dựng `Cart Service Frontend` và `Cart Service Admin`.
+    *   Tích hợp vào `Shell App User` và `Shell App Admin`.
 
-\`\`\`
-/project-root
-├── services/
-│   └── football-service/                           # Mã nguồn của Dịch vụ Bóng đá
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── match_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── match_data_processor.py
-│       │   ├── models/
-│       │   │   └── match.py
-│       │   ├── repositories/                       # Lớp tương tác với Football DB
-│       │   │   └── match_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── football-service-frontend/                  # Giao diện người dùng Bóng đá
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang lịch thi đấu, kết quả, bảng xếp hạng
-│   │   │   │   └── MatchListPage.js
-│   │   │   ├── services/                           # Tương tác với Football Service API
-│   │   │   │   └── football.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── football-service-admin/                     # Giao diện quản trị Bóng đá
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý trận đấu, đội bóng, cầu thủ
-│       │   │   └── MatchManagementPage.js
-│       │   ├── services/                           # Tương tác với Football Service API (Admin)
-│       │   │   └── admin.football.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Football DB (được quản lý bởi football-service)
-\`\`\`
+8.  **Payment Service (Dịch vụ Thanh toán):**
+    *   Xây dựng `Payment Service` (Backend) và `Payment DB`.
+    *   Cập nhật cấu hình Nginx (API Gateway).
+    *   Xây dựng `Payment Service Frontend` và `Payment Service Admin`.
+    *   Tích hợp vào `Shell App User` và `Shell App Admin`.
 
-## 6. Ứng dụng Nhật ký thi công (Communication Log Application)
+### Giai đoạn 3: Triển khai các Microservice khác theo thứ tự ưu tiên
 
-Ứng dụng này bao gồm \`Communication Log Service\` (Backend), \`Communication Log Frontend\` và \`Communication Log Admin\`, cùng với \`Communication Log DB\`.
+Tiếp tục triển khai các dịch vụ còn lại theo cùng mô hình "lát cắt dọc", dựa trên mức độ ưu tiên và sự phụ thuộc của chúng.
 
-\`\`\`
-/project-root
-├── services/
-│   └── communication-log-service/                  # Mã nguồn của Dịch vụ Nhật ký thi công
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── log_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── log_manager.py
-│       │   ├── models/
-│       │   │   └── communication_log.py
-│       │   ├── repositories/                       # Lớp tương tác với Communication Log DB
-│       │   │   └── log_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── communication-log-frontend/                 # Giao diện người dùng Nhật ký thi công
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang xem/thêm nhật ký
-│   │   │   │   └── LogEntryPage.js
-│   │   │   ├── services/                           # Tương tác với Communication Log Service API
-│   │   │   │   └── log.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── communication-log-admin/                    # Giao diện quản trị Nhật ký thi công
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý các loại nhật ký, người dùng
-│       │   │   └── LogTypeManagementPage.js
-│       │   ├── services/                           # Tương tác với Communication Log Service API (Admin)
-│       │   │   └── admin.log.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Communication Log DB (được quản lý bởi communication-log-service)
-\`\`\`
+9.  **News Service (Dịch vụ Tin tức):** `News Service` (Backend) & `News DB` -> Cập nhật API Gateway -> `News Service Frontend` & `News Service Admin` -> Tích hợp vào Shell App.
+10. **Agent Management Service (Dịch vụ Quản lý Đại lý):** `Agent Management Service` & `Agent Management DB` -> Cập nhật API Gateway -> `Agent Management Frontend` & `Agent Management Admin` -> Tích hợp vào Shell App.
+11. **Agent Policy Service (Dịch vụ Chính sách Đại lý):** `Agent Policy Service` & `Agent Policy DB` -> Cập nhật API Gateway -> `Agent Policy Frontend` & `Agent Policy Admin` -> Tích hợp vào Shell App.
+12. **Shell Config Service (Dịch vụ Cấu hình Shell):** `Shell Config Service` & `Shell Config DB` -> Cập nhật API Gateway -> Tích hợp vào Shell App (để quản lý cấu hình).
+13. **Admin Service (Dịch vụ Quản trị):** `Admin Service` & `Admin DB` -> Cập nhật API Gateway -> `Admin Service Frontend` & `Admin Service Admin` -> Tích hợp vào Shell App.
+14. **Các dịch vụ khác:** Triển khai `Design Calculation Service`, `Football Service`, `Communication Log Service`, `Chatbot Service` theo thứ tự ưu tiên của dự án.
 
-## 7. Ứng dụng Chatbot (Chatbot Application)
+*Với mỗi dịch vụ, quy trình lặp lại là: (1) Xây dựng Backend & DB -> (2) Cập nhật API Gateway -> (3) Xây dựng Frontend & Admin -> (4) Tích hợp vào Shell App.*
 
-Ứng dụng này bao gồm \`Chatbot Service\` (Backend), \`Chatbot Service Frontend\` và \`Chatbot Service Admin\`, cùng với \`Chatbot DB\`.
+## 2. Các phần có thể triển khai song song (khi có đội ngũ)
 
-\`\`\`
-/project-root
-├── services/
-│   └── chatbot-service/                            # Mã nguồn của Dịch vụ Chatbot
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── message_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── dialog_manager.py               # Logic xử lý hội thoại
-│       │   ├── models/
-│       │   │   └── message.py
-│       │   ├── repositories/                       # Lớp tương tác với Chatbot DB
-│       │   │   └── conversation_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── chatbot-service-frontend/                   # Giao diện người dùng Chatbot
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang giao diện chatbot
-│   │   │   │   └── ChatWindow.js
-│   │   │   ├── services/                           # Tương tác với Chatbot Service API
-│   │   │   │   └── chatbot.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── chatbot-service-admin/                      # Giao diện quản trị Chatbot
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý kịch bản, câu hỏi/trả lời
-│       │   │   └── DialogManagementPage.js
-│       │   ├── services/                           # Tương tác với Chatbot Service API (Admin)
-│       │   │   └── admin.chatbot.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Chatbot DB (được quản lý bởi chatbot-service)
-\`\`\`
+Khi có một đội ngũ phát triển, kiến trúc Microservice cho phép nhiều nhóm làm việc đồng thời trên các phần khác nhau của hệ thống, giúp tăng tốc độ phát triển tổng thể. Các khối sau đây có thể được phát triển, kiểm thử và triển khai một cách song song:
 
-## 8. Ứng dụng Thanh toán (Payment Application)
+*   **Các Microservice Backend riêng lẻ:** Mỗi dịch vụ backend (ví dụ: Cart Service, Product Service, User Service, v.v.) được thiết kế để hoạt động độc lập. Các nhóm khác nhau có thể làm việc trên các dịch vụ này đồng thời.
+*   **Cơ sở dữ liệu (Databases) của từng Microservice:** Mỗi microservice thường có cơ sở dữ liệu riêng của nó. Việc thiết kế và triển khai mỗi DB có thể tiến hành song song với việc phát triển microservice tương ứng.
+*   **Các thành phần Frontend riêng lẻ:** Các giao diện người dùng (Frontend Components) cho từng dịch vụ hoặc vai trò (User Frontend, Admin Frontend) có thể được phát triển độc lập. Điều này đặc biệt đúng nếu áp dụng kiến trúc Micro-frontend.
+*   **Hạ tầng (Infrastructure):** Việc thiết lập và quản lý hạ tầng có thể được thực hiện song song với việc phát triển các dịch vụ mà không cần đợi các dịch vụ hoàn thiện.
+*   **API Gateway (Cổng API):** Việc thiết lập và cấu hình cơ bản của API Gateway có thể bắt đầu độc lập. Các cấu hình cụ thể cho từng dịch vụ sẽ được thêm vào khi các microservice backend được phát triển.
+*   **Message Broker và Cache:** Các thành phần này cũng có thể được thiết lập và cấu hình ở mức độ cơ bản một cách độc lập để sẵn sàng cho việc tích hợp với các microservice.
 
-Ứng dụng này bao gồm \`Payment Service\` (Backend), \`Payment Service Frontend\` và \`Payment Service Admin\`, cùng với \`Payment DB\`.
+Việc phân tích này giúp tối ưu hóa việc phân bổ nguồn lực và rút ngắn thời gian tổng thể của dự án bằng cách cho phép nhiều nhóm làm việc đồng thời trên các phần khác nhau của hệ thống.
 
-\`\`\`
-/project-root
-├── services/
-│   └── payment-service/                            # Mã nguồn của Dịch vụ Thanh toán
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── payment_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── payment_processor.py            # Logic xử lý thanh toán
-│       │   ├── models/
-│       │   │   └── transaction.py
-│       │   ├── repositories/                       # Lớp tương tác với Payment DB
-│       │   │   └── transaction_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── payment-service-frontend/                   # Giao diện người dùng Thanh toán
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang thanh toán, lịch sử giao dịch
-│   │   │   │   └── PaymentPage.js
-│   │   │   ├── services/                           # Tương tác với Payment Service API
-│   │   │   │   └── payment.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── payment-service-admin/                      # Giao diện quản trị Thanh toán
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý giao dịch, hoàn tiền
-│       │   │   └── TransactionManagementPage.js
-│       │   ├── services/                           # Tương tác với Payment Service API (Admin)
-│       │   │   └── admin.payment.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Payment DB (được quản lý bởi payment-service)
-\`\`\`
 
-## 9. Ứng dụng Người dùng (User Application)
+`
+                },
+                'deployment-guide': {
+                    title: "Từng bước triển khai dự án Microservice trên VPS đơn lẻ (Chi tiết)",
+                    content: `# Từng bước triển khai dự án Microservice trên VPS đơn lẻ (Chi tiết)
 
-Ứng dụng này bao gồm \`User Service\` (Backend), \`User Service Frontend\` và \`User Service Admin\`, cùng với \`User DB\`.
+Tài liệu này cung cấp một hướng dẫn chi tiết và thực tế về quy trình triển khai dự án Microservice của bạn trên một máy chủ ảo (VPS) đơn lẻ. Nó tập trung vào việc xác định thứ tự ưu tiên, quản lý các mối quan hệ phụ thuộc, và hoàn thiện từng "lát cắt dọc" (vertical slice) của chức năng.
 
-\`\`\`
-/project-root
-├── services/
-│   └── user-service/                               # Mã nguồn của Dịch vụ Người dùng
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── user_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── user_manager.py
-│       │   ├── models/
-│       │   │   └── user.py
-│       │   ├── repositories/                       # Lớp tương tác với User DB
-│       │   │   └── user_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── user-service-frontend/                      # Giao diện người dùng Người dùng
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang đăng ký, đăng nhập, hồ sơ cá nhân
-│   │   │   │   └── ProfilePage.js
-│   │   │   ├── services/                           # Tương tác với User Service API
-│   │   │   │   └── user.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── user-service-admin/                         # Giao diện quản trị Người dùng
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý người dùng, phân quyền
-│       │   │   └── UserManagementPage.js
-│       │   ├── services/                           # Tương tác với User Service API (Admin)
-│       │   │   └── admin.user.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: User DB (được quản lý bởi user-service)
-\`\`\`
+## Giai đoạn 1: Thiết kế và Định hình Dự án (Nền tảng cho mọi thứ)
 
-## 10. Ứng dụng Quản trị (Admin Application)
+Đây là giai đoạn quan trọng nhất để định hình dự án, xác định cấu trúc và các thành phần trước khi bắt tay vào code. **Không nên bỏ qua hoặc làm qua loa giai đoạn này.**
 
-Ứng dụng này bao gồm \`Admin Service\` (Backend), \`Admin Service Frontend\` và \`Admin Service Admin\`, cùng với \`Admin DB\`.
+### Bước 1: Phân tích Sơ đồ Kiến trúc và Xác định các Khối Cốt lõi
 
-\`\`\`
-/project-root
-├── services/
-│   └── admin-service/                              # Mã nguồn của Dịch vụ Quản trị
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── dashboard_controller.js
-│       │   │   └── health_check_controller.js
-│       │   ├── core/
-│       │   │   └── system_monitor.js
-│       │   ├── models/
-│       │   │   └── audit_log.js
-│       │   ├── repositories/                       # Lớp tương tác với Admin DB
-│       │   │   └── audit_log_repository.js
-│       │   ├── config.js
-│       │   └── app.js
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── package.json
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── admin-service-frontend/                     # Giao diện người dùng Quản trị (Dashboard)
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang dashboard, báo cáo hệ thống
-│   │   │   │   └── DashboardPage.js
-│   │   │   ├── services/                           # Tương tác với Admin Service API
-│   │   │   │   └── admin.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── admin-service-admin/                        # Giao diện quản trị Admin (cấu hình hệ thống)
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang cấu hình hệ thống, quản lý vai trò
-│       │   │   └── SystemConfigPage.js
-│       │   ├── services/                           # Tương tác với Admin Service API (Admin)
-│       │   │   └── super.admin.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Admin DB (được quản lý bởi admin-service)
-\`\`\`
+1.  **Phân tích sơ đồ kiến trúc tổng thể:** Dựa trên sơ đồ bạn đã cung cấp (ví dụ: `sodochuan.html`), hiểu rõ các thành phần chính: Infrastructure, Backend Microservices, API Gateway, Frontend Applications, Databases.
+2.  **Xác định các khối độc lập:** Liệt kê các Microservice Backend, Frontend Components và Database tương ứng có thể hoạt động như một ứng dụng độc lập. (Tham khảo tài liệu: [Kiến trúc độc lập tách rời.md](Kiến trúc độc lập tách rời.md)).
+3.  **Xác định các dịch vụ nền tảng (Foundation Services):** Trong kiến trúc Microservice, một số dịch vụ là nền tảng cho các dịch vụ khác. `User Service` (quản lý người dùng, xác thực) là ví dụ điển hình. `Shell Config Service` (quản lý cấu hình chung) cũng có thể là một dịch vụ nền tảng.
+4.  **Xác định thứ tự ưu tiên triển khai ban đầu:** Dựa trên các dịch vụ nền tảng, quyết định dịch vụ nào cần được phát triển và triển khai trước tiên. (Tham khảo tài liệu: [Thứ tự triển khai dự án Microservice.md](Thứ tự triển khai dự án Microservice.md)).
 
-## 11. Ứng dụng Quản lý Đại lý (Agent Management Application)
+### Bước 2: Thiết kế Cấu trúc Thư mục Tổng thể của Dự án
 
-Ứng dụng này bao gồm \`Agent Management Service\` (Backend), \`Agent Management Frontend\` và \`Agent Management Admin\`, cùng với \`Agent Management DB\`.
+Đây là bước bạn hình dung và tạo ra cấu trúc thư mục gốc cho toàn bộ dự án. Việc này giúp tổ chức mã nguồn một cách rõ ràng và nhất quán.
 
-\`\`\`
-/project-root
-├── services/
-│   └── agent-management-service/                   # Mã nguồn của Dịch vụ Quản lý Đại lý
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── agent_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── agent_manager.py
-│       │   ├── models/
-│       │   │   └── agent.py
-│       │   ├── repositories/                       # Lớp tương tác với Agent Management DB
-│       │   │   └── agent_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── agent-management-frontend/                  # Giao diện người dùng Quản lý Đại lý
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang danh sách đại lý, thông tin đại lý
-│   │   │   │   └── AgentListPage.js
-│   │   │   ├── services/                           # Tương tác với Agent Management Service API
-│   │   │   │   └── agent.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── agent-management-admin/                     # Giao diện quản trị Quản lý Đại lý
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang thêm/sửa/xóa đại lý, quản lý hoa hồng
-│       │   │   └── AgentEditorPage.js
-│       │   ├── services/                           # Tương tác với Agent Management Service API (Admin)
-│       │   │   └── admin.agent.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Agent Management DB (được quản lý bởi agent-management-service)
-\`\`\`
+1.  **Xem lại tài liệu:** Tham khảo tài liệu [Kiến trúc Thư mục Dự án Chi tiết.md](Kiến trúc Thư mục Dự án Chi tiết.md) để có cái nhìn tổng quan về cấu trúc thư mục gốc.
+2.  **Hình ảnh hóa:** Sử dụng hình ảnh kiến trúc thư mục dạng cây để dễ hình dung hơn:
 
-## 12. Ứng dụng Chính sách Đại lý (Agent Policy Application)
+    ```
+    . (project-root)
+    ├── .git/
+    ├── .github/
+    ├── infrastructure/
+    ├── services/
+    │   ├── cart-service/
+    │   ├── product-service/
+    │   └── user-service/
+    ├── frontend/
+    │   ├── shell-app-user/
+    │   ├── cart-service-frontend/
+    │   └── user-service-frontend/
+    ├── docker-compose.yml
+    ├── nginx/
+    ├── docs/
+    ├── .env.example
+    ├── README.md
+    └── LICENSE
+    ```
 
-Ứng dụng này bao gồm \`Agent Policy Service\` (Backend), \`Agent Policy Frontend\` và \`Agent Policy Admin\`, cùng với \`Agent Policy DB\`.
+### Bước 3: Thiết kế Cấu trúc Thư mục Chi tiết cho từng Phần Độc lập
 
-\`\`\`
-/project-root
-├── services/
-│   └── agent-policy-service/                       # Mã nguồn của Dịch vụ Chính sách Đại lý
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── policy_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── policy_engine.py
-│       │   ├── models/
-│       │   │   └── policy.py
-│       │   ├── repositories/                       # Lớp tương tác với Agent Policy DB
-│       │   │   └── policy_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── agent-policy-frontend/                      # Giao diện người dùng Chính sách Đại lý
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang xem các chính sách áp dụng
-│   │   │   │   └── PolicyViewPage.js
-│   │   │   ├── services/                           # Tương tác với Agent Policy Service API
-│   │   │   │   └── policy.api.js
-│   │   │   └── App.js
-│   │   ├── package.json
-│   │   └── README.md
-│   └── agent-policy-admin/                         # Giao diện quản trị Chính sách Đại lý
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý, tạo mới, chỉnh sửa chính sách
-│       │   │   └── PolicyEditorPage.js
-│       │   ├── services/                           # Tương tác với Agent Policy Service API (Admin)
-│       │   │   └── admin.policy.api.js
-│       │   └── App.js
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Agent Policy DB (được quản lý bởi agent-policy-service)
-\`\`\`
+Đi sâu vào cấu trúc bên trong mỗi Microservice Backend và Frontend Component. Bước này giúp bạn định hình các file và thư mục con sẽ có trong từng dịch vụ.
 
-## 13. Ứng dụng Cấu hình Shell (Shell Config Application)
+1.  **Xem lại tài liệu:** Tham khảo tài liệu [Kiến trúc Thư mục Dự án Chi tiết.md](Kiến trúc Thư mục Dự án Chi tiết.md) để có cấu trúc chi tiết cho từng dịch vụ (ví dụ: `src/`, `public/`, `tests/`, `Dockerfile`, v.v.).
 
-Ứng dụng này bao gồm \`Shell Config Service\` (Backend), \`Shell App User\` và \`Shell App Admin\` (là các Frontend chính), cùng với \`Shell Config DB\`.
+### Bước 4: Lập kế hoạch các File Cấu hình Ban đầu
 
-\`\`\`
-/project-root
-├── services/
-│   └── shell-config-service/                       # Mã nguồn của Dịch vụ Cấu hình Shell
-│       ├── src/
-│       │   ├── api/
-│       │   │   ├── config_controller.py
-│       │   │   └── health_check_controller.py
-│       │   ├── core/
-│       │   │   └── config_manager.py
-│       │   ├── models/
-│       │   │   └── app_config.py
-│       │   ├── repositories/                       # Lớp tương tác với Shell Config DB
-│       │   │   └── config_repository.py
-│       │   ├── config.py
-│       │   └── main.py
-│       ├── tests/
-│       ├── Dockerfile
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── README.md
-│
-├── frontend/
-│   ├── shell-app-user/                             # Ứng dụng Frontend chính cho người dùng cuối
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/                                    # Mã nguồn chính của ứng dụng Frontend
-│   │   │   ├── assets/
-│   │   │   ├── components/
-│   │   │   ├── pages/                              # Trang chủ, trang cài đặt cá nhân
-│   │   │   │   └── UserDashboardPage.js
-│   │   │   ├── services/                           # Tương tác với Shell Config Service API
-│   │   │   │   └── shell.config.api.js
-│   │   │   ├── store/                              # Quản lý trạng thái cấu hình
-│   │   │   └── App.js
-│   │   ├── .env
-│   │   ├── .env.production
-│   │   ├── package.json
-│   │   └── README.md
-│   └── shell-app-admin/                            # Ứng dụng Frontend chính cho quản trị viên
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý cấu hình toàn hệ thống
-│       │   │   └── GlobalConfigPage.js
-│       │   ├── services/                           # Tương tác với Shell Config Service API (Admin)
-│       │   │   └── admin.shell.config.api.js
-│       │   ├── store/
-│       │   └── App.js
-│       ├── .env
-│       ├── .env.production
-│       ├── package.json
-│       └── README.md
-│
-└── # Database: Shell Config DB (được quản lý bởi shell-config-service)
-\`\`\`
+1.  **`docker-compose.yml`:** Lập kế hoạch các dịch vụ Docker sẽ chạy cục bộ và trên VPS. Ban đầu, nó sẽ bao gồm các dịch vụ nền tảng như `user-db`, `user-service`, `nginx` (làm API Gateway/Reverse Proxy).
+2.  **`.env.example` và `.env`:** Xác định các biến môi trường cần thiết cho dự án (ví dụ: thông tin kết nối database, khóa API). File `.env.example` chứa các biến mẫu, còn `.env` chứa giá trị thật và không được commit lên Git.
+3.  **`.gitignore`:** Liệt kê các file và thư mục cần bỏ qua khi đẩy lên Git (ví dụ: `node_modules/`, `__pycache__/`, `.env`).
 
-## 14. Ứng dụng Quản trị Cấu hình Shell (Shell Config Admin Frontend)
+## Giai đoạn 2: Chuẩn bị Môi trường Phát triển và Khởi tạo Repository
 
-Ứng dụng này là một Frontend độc lập, chuyên biệt cho việc quản lý cấu hình của hệ thống Shell, không thuộc \`Shell App Admin\`.
+### Bước 5: Chuẩn bị Môi trường Phát triển (trên máy tính cá nhân)
 
-\`\`\`
-/project-root
-├── frontend/
-│   └── shell-config-admin-frontend/                # Giao diện quản trị cấu hình Shell độc lập
-│       ├── public/
-│       │   └── index.html
-│       ├── src/
-│       │   ├── assets/
-│       │   ├── components/
-│       │   ├── pages/                              # Trang quản lý các thiết lập cấu hình, người dùng, quyền hạn
-│       │   │   └── ConfigManagementPage.js
-│       │   ├── services/                           # Tương tác với Shell Config Service API (Admin)
-│       │   │   └── shell.config.admin.api.js
-│       │   ├── store/
-│       │   └── App.js
-│       ├── .env
-│       ├── .env.production
-│       ├── package.json
-│       └── README.md
-\`\`\`
+1.  **Cài đặt Git:** Đảm bảo bạn đã cài đặt Git trên máy tính của mình để quản lý mã nguồn.
+2.  **Cài đặt IDE/Editor:** Sử dụng một trình soạn thảo mã nguồn mạnh mẽ như Visual Studio Code (VS Code).
+3.  **Cài đặt Docker Desktop:** Cài đặt Docker Desktop trên máy tính cá nhân. Điều này rất quan trọng để bạn có thể xây dựng và kiểm thử các Docker image trước khi triển khai lên VPS.
+4.  **Cài đặt Node.js và Python (hoặc các ngôn ngữ khác):** Cài đặt các môi trường lập trình bạn sẽ sử dụng cho các Microservice và Frontend.
 
-## Lưu ý quan trọng
+### Bước 6: Khởi tạo Dự án trên GitHub
 
-**Các ví dụ về ngôn ngữ/framework** (Python, Node.js, Go, Java) chỉ mang tính minh họa. Bạn có thể sử dụng ngôn ngữ/framework phù hợp cho từng dịch vụ.
+1.  Truy cập vào [GitHub](https://github.com) và tạo một **repository mới** (private hoặc public tùy bạn).
+2.  Đặt tên cho repository, ví dụ: `my-microservice-project`.
+3.  **KHÔNG** khởi tạo với `README`, `.gitignore` hoặc `license` vội. Chúng ta sẽ tạo chúng ở bước sau.
 
-**Cấu trúc \`src/\`** bên trong mỗi Microservice và Frontend có thể thay đổi tùy theo framework và quy ước của đội phát triển, nhưng các thư mục như \`api/controllers\`, \`core/services\`, \`models\`, \`repositories\`, \`pages\`, \`components\` là khá phổ biến.
+### Bước 7: Khởi tạo Cấu trúc Thư mục Dự án Cục bộ
 
-**Các file \`.env\`** và \`.env.production\` trong Frontend là ví dụ về cách quản lý biến môi trường cho các môi trường khác nhau. Các biến này sẽ được build vào ứng dụng Frontend.
+1.  Mở terminal (hoặc Git Bash) trên máy tính của bạn.
+2.  Tạo thư mục gốc cho dự án và di chuyển vào đó:
+    ```bash
+    mkdir my-microservice-project
+    cd my-microservice-project
+    ```
+3.  Khởi tạo Git repository cục bộ và kết nối với GitHub:
+    ```bash
+    git init
+    git remote add origin <URL_CUA_REPOSITORY_GITHUB_CUA_BAN>
+    ```
+4.  Tạo cấu trúc thư mục ban đầu như đã định nghĩa trong Bước 2 (Giai đoạn 1):
+    ```bash
+    mkdir docs frontend infrastructure nginx services
+    # Tạo các thư mục con cho từng service và frontend đã xác định
+    mkdir services/user-service services/product-service services/cart-service
+    mkdir frontend/shell-app-user frontend/product-service-frontend frontend/cart-service-frontend
+    ```
+5.  Tạo các file ban đầu như đã định nghĩa trong Bước 4 (Giai đoạn 1):
+    ```bash
+    touch README.md .gitignore docker-compose.yml .env.example .env
+    ```
 
-Tài liệu này cung cấp một cái nhìn sâu sắc về cách tổ chức mã nguồn cho từng ứng dụng độc lập, giúp bạn dễ dàng phát triển và quản lý dự án Microservice của mình.`
+### Bước 8: Cấu hình các File Ban đầu
+
+1.  **`.gitignore`:** Thêm các file và thư mục không cần thiết vào `.gitignore`. Đây là một file mẫu tốt để bắt đầu:
+    ```
+    # Môi trường
+    .env
+
+    # Node.js
+    node_modules/
+    npm-debug.log
+    yarn-error.log
+
+    # Python
+    __pycache__/
+    *.pyc
+    .venv/
+    venv/
+
+    # Build artifacts
+    build/
+    dist/
+
+    # Docker
+    *.log
+    ```
+2.  **`README.md`:** Viết một vài dòng giới thiệu ngắn gọn về dự án.
+3.  **`docker-compose.yml`:** File này sẽ định nghĩa tất cả các dịch vụ của bạn. Ban đầu, nó sẽ chứa `user-db` và `user-service`.
+4.  **`.env.example` và `.env`:** `.env.example` sẽ chứa danh sách các biến môi trường cần thiết cho dự án, nhưng với giá trị mẫu. File `.env` sẽ chứa giá trị thật và **không được đẩy lên GitHub**.
+
+### Bước 9: Đẩy Lên GitHub Lần đầu
+
+Bây giờ bạn đã có cấu trúc cơ bản, hãy đẩy nó lên GitHub để lưu trữ.
+
+```bash
+git add .
+git commit -m "Initial project structure"
+git push -u origin master
+```
+
+**Khi nào nên đẩy lên GitHub?**
+
+*   Sau khi hoàn thành một tính năng nhỏ.
+*   Sau khi sửa một lỗi.
+*   Vào cuối mỗi ngày làm việc.
+
+**=> Luôn đẩy code lên GitHub thường xuyên!**
+
+## Giai đoạn 3: Phát triển "Lát cắt dọc" đầu tiên - User Service (Nền tảng)
+
+**Mục tiêu:** Hoàn thiện `User Service` (Backend), `User DB` và `User Service Frontend` (hoặc tích hợp vào `Shell App User`) để có một tính năng xác thực/quản lý người dùng hoạt động đầy đủ.
+
+### Bước 10: Phát triển User Service (Backend) và Dockerize
+
+1.  Trong thư mục `services/`, tạo thư mục `user-service`.
+2.  Bên trong `user-service`, tạo cấu trúc thư mục chi tiết cho dịch vụ này (ví dụ: `src/`, `tests/`, `Dockerfile`, `requirements.txt` hoặc `package.json`) như đã định nghĩa trong tài liệu [Kiến trúc Thư mục Dự án Chi tiết.md](Kiến trúc Thư mục Dự án Chi tiết.md).
+3.  Viết mã nguồn cho `User Service`: các API đăng ký, đăng nhập, lấy thông tin người dùng.
+4.  Viết `Dockerfile` cho `User Service` để đóng gói nó thành một Docker image.
+
+### Bước 10.1: Build và Kiểm thử Docker Image cục bộ (Tùy chọn)
+
+Nếu bạn muốn kiểm thử Docker Image độc lập trước khi dùng `docker-compose`:
+
+1.  **Build Image:** Từ thư mục gốc của dự án, chạy lệnh:
+    ```bash
+    docker build -t your-dockerhub-username/user-service:latest ./services/user-service
+    ```
+    *   `-t`: Đặt tên và tag cho image. `your-dockerhub-username` là tên tài khoản Docker Hub của bạn.
+    *   `./services/user-service`: Đường dẫn đến thư mục chứa Dockerfile của `user-service`.
+2.  **Chạy thử Container:**
+    ```bash
+    docker run -p 8001:8000 your-dockerhub-username/user-service:latest
+    ```
+    Lệnh này sẽ chạy container và map cổng 8000 bên trong container ra cổng 8001 trên máy tính của bạn. Bạn có thể kiểm tra API tại `http://localhost:8001`.
+3.  **Dừng Container:** `docker stop <container_id>` hoặc `docker rm -f <container_id>`.
+
+### Bước 10.2: Đẩy Docker Image lên Docker Hub (Tùy chọn)
+
+Nếu bạn muốn quản lý các image của mình trên Docker Hub:
+
+1.  **Đăng nhập Docker Hub:**
+    ```bash
+    docker login
+    ```
+    Nhập tên người dùng và mật khẩu Docker Hub của bạn.
+2.  **Đẩy Image:**
+    ```bash
+    docker push your-dockerhub-username/user-service:latest
+    ```
+    Image của bạn giờ đã có trên Docker Hub và có thể được kéo về từ bất kỳ đâu.
+
+### Bước 11: Cấu hình Docker Compose cho User Service và User DB
+
+Cập nhật file `docker-compose.yml` ở thư mục gốc để thêm `User Service` và cơ sở dữ liệu của nó (`user-db`).
+
+```yaml
+version: '3.8'
+
+services:
+  user-db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: user_db
+    volumes:
+      - user_db_data:/var/lib/postgresql/data
+    restart: always
+
+  user-service:
+    build:
+      context: ./services/user-service
+    ports:
+      - "8001:8000" # Map cổng 8000 của container ra cổng 8001 của máy
+    depends_on:
+      - user-db
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@user-db/user_db
+    restart: always
+
+volumes:
+  user_db_data:
+```
+
+### Bước 12: Kiểm thử Cục bộ với Docker Compose
+
+1.  Cập nhật file `.env` với các giá trị cho `POSTGRES_USER` và `POSTGRES_PASSWORD`.
+2.  Chạy lệnh sau từ thư mục gốc của dự án:
+    ```bash
+    docker-compose up --build
+    ```
+3.  Docker sẽ xây dựng image cho `user-service` và khởi chạy cả hai container `user-service` và `user-db`.
+4.  Sử dụng một công cụ như Postman hoặc `curl` để kiểm tra các API của `User Service` tại `http://localhost:8001`.
+
+### Bước 13: Phát triển User Service Frontend (hoặc tích hợp vào Shell App User)
+
+1.  Trong thư mục `frontend/`, tạo thư mục `shell-app-user` (nếu chưa có) hoặc `user-service-frontend`.
+2.  Tạo cấu trúc thư mục chi tiết cho Frontend này (ví dụ: `src/`, `public/`, `package.json`) như đã định nghĩa trong tài liệu [Kiến trúc Thư mục Dự án Chi tiết.md](Kiến trúc Thư mục Dự án Chi tiết.md).
+3.  Viết mã nguồn cho Frontend: các trang đăng ký, đăng nhập, hồ sơ người dùng. Frontend này sẽ gọi các API của `User Service`.
+4.  **Kiểm thử cục bộ:** Chạy Frontend cục bộ và đảm bảo nó có thể giao tiếp với `User Service` đang chạy qua Docker Compose.
+
+### Bước 14: Đẩy Lên GitHub (Sau khi hoàn thiện "lát cắt dọc" User Service)
+
+Sau khi `User Service` (Backend + DB) và `User Service Frontend` hoạt động tốt ở môi trường cục bộ, hãy đẩy toàn bộ code lên GitHub.
+
+```bash
+git add .
+git commit -m "feat: Implement User Service vertical slice (Backend + Frontend)"
+git push
+```
+
+## Giai đoạn 4: Triển khai Lên VPS và Tự động hóa (Thiết lập môi trường Production)
+
+### Bước 15: Cấu hình VPS (Một lần duy nhất)
+
+1.  **SSH vào VPS của bạn.**
+2.  **Thực hiện các bước trong tài liệu [Hướng dẫn Triển khai Hạ tầng Microservice trên VPS đơn lẻ.md](Hướng dẫn Triển khai Hạ tầng Microservice trên VPS đơn lẻ.md)**: Cài đặt Docker, Docker Compose, Nginx, cấu hình tường lửa, v.v. Đây là bước chuẩn bị môi trường runtime cho các Microservice.
+
+### Bước 16: Thiết lập CI/CD với GitHub Actions (Sử dụng Docker Hub)
+
+Đây là bước quan trọng để tự động hóa quy trình triển khai. Mỗi khi bạn đẩy code lên GitHub, GitHub Actions sẽ tự động build Docker image, đẩy lên Docker Hub, và sau đó triển khai lên VPS.
+
+1.  Trong thư mục gốc của dự án (trên máy cá nhân), tạo thư mục `.github/workflows/`.
+2.  Tạo file `deploy.yml` bên trong thư mục đó.
+3.  Nội dung file `deploy.yml` (ví dụ cho `User Service`):
+
+    ```yaml
+    name: CI/CD to VPS
+
+    on:
+      push:
+        branches:
+          - master # Chạy khi có push lên nhánh master
+
+    jobs:
+      build-and-push:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+
+          - name: Log in to Docker Hub
+            uses: docker/login-action@v2
+            with:
+              username: ${{ secrets.DOCKER_USERNAME }}
+              password: ${{ secrets.DOCKER_PASSWORD }}
+
+          - name: Build and push User Service image
+            run: |
+              docker build -t ${{ secrets.DOCKER_USERNAME }}/user-service:latest ./services/user-service
+              docker push ${{ secrets.DOCKER_USERNAME }}/user-service:latest
+
+          - name: Build and push Shell App User image # Nếu Frontend cũng được container hóa
+            run: |
+              docker build -t ${{ secrets.DOCKER_USERNAME }}/shell-app-user:latest ./frontend/shell-app-user
+              docker push ${{ secrets.DOCKER_USERNAME }}/shell-app-user:latest
+
+      deploy:
+        needs: build-and-push # Đảm bảo image đã được build và đẩy lên Docker Hub trước khi deploy
+        runs-on: ubuntu-latest
+        steps:
+          - name: SSH and Deploy
+            uses: appleboy/ssh-action@master
+            with:
+              host: ${{ secrets.VPS_HOST }} # IP của VPS
+              username: ${{ secrets.VPS_USERNAME }} # Tên đăng nhập VPS (ví dụ: ubuntu)
+              key: ${{ secrets.VPS_SSH_KEY }} # Khóa SSH private
+              script: |
+                cd /path/to/your/project/on/vps # Di chuyển đến thư mục dự án trên VPS
+                git pull origin master # Kéo code mới nhất (để cập nhật docker-compose.yml)
+                echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" > .env # Tạo lại file .env trên VPS
+                echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
+                # Thêm các biến môi trường khác nếu cần
+                docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} # Đăng nhập Docker Hub trên VPS
+                docker-compose pull # Kéo các image mới nhất từ Docker Hub
+                docker-compose up -d --remove-orphans # Khởi chạy các container (không cần --build nữa)
+                # Cấu hình Nginx trên VPS để trỏ đến các dịch vụ
+                sudo cp /path/to/your/project/on/vps/nginx/sites-enabled/your_project.conf /etc/nginx/sites-enabled/
+                sudo nginx -t && sudo systemctl reload nginx
+    ```
+
+4.  **Cấu hình Secrets trên GitHub:**
+    *   Vào repository GitHub của bạn -> Settings -> Secrets and variables -> Actions.
+    *   Tạo các secret sau:
+        *   `VPS_HOST`: Địa chỉ IP của VPS.
+        *   `VPS_USERNAME`: Tên người dùng để SSH vào VPS.
+        *   `VPS_SSH_KEY`: Nội dung của file khóa SSH private của bạn (dùng để kết nối vào VPS).
+        *   `POSTGRES_USER`: Tên người dùng cho PostgreSQL trên VPS.
+        *   `POSTGRES_PASSWORD`: Mật khẩu cho PostgreSQL trên VPS.
+        *   `DOCKER_USERNAME`: Tên tài khoản Docker Hub của bạn.
+        *   `DOCKER_PASSWORD`: Mật khẩu tài khoản Docker Hub của bạn.
+
+### Bước 17: Triển khai Lần đầu Lên VPS
+
+1.  **SSH vào VPS**, clone repository của bạn về:
+    ```bash
+    git clone <URL_CUA_REPOSITORY_GITHUB_CUA_BAN> /path/to/your/project/on/vps
+    ```
+2.  **Đẩy code lên GitHub:** Đẩy file `deploy.yml` lên GitHub. Ngay lập tức, GitHub Actions sẽ được kích hoạt. Nó sẽ SSH vào VPS của bạn, kéo code mới nhất, và chạy `docker-compose up`.
+3.  **Kiểm tra:** Sau khi Action chạy xong, bạn có thể SSH vào VPS và chạy `docker ps` để xem các container đang hoạt động. Kiểm tra ứng dụng qua trình duyệt.
+
+## Giai đoạn 5: Lặp lại và Phát triển các Dịch vụ khác (Theo từng "Lát cắt dọc")
+
+Bây giờ bạn đã có một quy trình hoàn chỉnh và một dịch vụ nền tảng hoạt động. Để phát triển các dịch vụ tiếp theo (Product Service, Cart Service, Payment Service, v.v.), bạn chỉ cần lặp lại các bước theo từng "lát cắt dọc" (Backend + DB + Frontend) và tích hợp chúng vào hệ thống.
+
+**Thứ tự ưu tiên (ví dụ):**
+
+1.  **Product Service:** (Backend + DB + Frontend)
+    *   **Tại sao làm trước?** Thường là dịch vụ cốt lõi để hiển thị sản phẩm, liên quan trực tiếp đến `Cart Service`.
+    *   **Các bước:**
+        *   Phát triển `Product Service` (Backend) và `Product DB`.
+        *   Cập nhật `docker-compose.yml` để thêm `product-service` và `product-db`.
+        *   Kiểm thử cục bộ.
+        *   Phát triển `Product Service Frontend` (hoặc tích hợp vào `Shell App User`).
+        *   Cập nhật `docker-compose.yml` để thêm `product-service-frontend` (nếu container hóa).
+        *   Kiểm thử cục bộ toàn bộ `Product Application`.
+        *   Đẩy code lên GitHub. CI/CD sẽ tự động triển khai lên VPS.
+        *   Cấu hình Nginx trên VPS để định tuyến cho `Product Service Frontend`.
+
+2.  **Cart Service:** (Backend + DB + Frontend)
+    *   **Tại sao làm sau Product?** Cần có sản phẩm để thêm vào giỏ hàng.
+    *   **Các bước:** Tương tự như `Product Service`.
+
+3.  **Payment Service:** (Backend + DB + Frontend)
+    *   **Tại sao làm sau Cart?** Cần có giỏ hàng để thanh toán.
+    *   **Các bước:** Tương tự như `Product Service`.
+
+4.  **News Service:** (Backend + DB + Frontend)
+    *   **Tại sao có thể làm song song hoặc sau?** Ít phụ thuộc vào các dịch vụ khác, có thể phát triển độc lập.
+    *   **Các bước:** Tương tự như `Product Service`.
+
+5.  **Các dịch vụ khác:** (Design Calculation, Football, Communication Log, Chatbot, Admin, Agent Management, Agent Policy, Shell Config)
+    *   Tiếp tục phát triển và triển khai từng dịch vụ theo mô hình "lát cắt dọc" tương tự, dựa trên mức độ ưu tiên và sự phụ thuộc.
+
+**Lưu ý quan trọng trong quá trình lặp lại:**
+
+*   **Cập nhật `docker-compose.yml`:** Mỗi khi thêm một dịch vụ mới (backend, frontend, db), bạn cần cập nhật file `docker-compose.yml` để Docker Compose biết cách khởi chạy chúng.
+*   **Cập nhật GitHub Actions:** Nếu bạn thêm các Docker image mới cần build và push, hãy cập nhật file `deploy.yml` trong GitHub Actions.
+*   **Cấu hình Nginx:** Mỗi khi thêm một Frontend mới, bạn cần cập nhật cấu hình Nginx trên VPS để định tuyến các yêu cầu đến Frontend đó.
+*   **Kiểm thử liên tục:** Luôn kiểm thử cục bộ sau mỗi lần thay đổi lớn và kiểm tra trên môi trường VPS sau khi triển khai.
+
+Quy trình này giúp bạn tập trung vào việc phát triển từng tính năng hoàn chỉnh, giảm thiểu sự phức tạp và đảm bảo rằng mỗi phần của hệ thống đều hoạt động ổn định trước khi tích hợp thêm các phần khác.
+
+
+`
+                },
+                'deployment-notes': {
+                    title: "Những lưu ý khi triển khai dự án Microservice trên VPS đơn lẻ",
+                    content: `# Những lưu ý khi triển khai dự án Microservice trên VPS đơn lẻ
+
+Việc triển khai một dự án Microservice, đặc biệt là trên một máy chủ ảo (VPS) đơn lẻ, mang lại nhiều lợi ích về tính linh hoạt và khả năng mở rộng trong tương lai. Tuy nhiên, nó cũng đi kèm với những thách thức và yêu cầu sự chú ý đặc biệt. Dưới đây là những lưu ý quan trọng bạn cần ghi nhớ:
+
+## 1. Về Kiến trúc và Thiết kế
+
+*   **Hiểu rõ nguyên tắc Microservice:** Đảm bảo mỗi service thực hiện một chức năng nghiệp vụ duy nhất, có cơ sở dữ liệu riêng (nếu cần), và giao tiếp qua API rõ ràng. Tránh biến Microservice thành Monolith phân tán.
+*   **Thiết kế API rõ ràng:** Các giao diện API giữa các service phải được định nghĩa rõ ràng, ổn định và có tài liệu hóa tốt (ví dụ: sử dụng OpenAPI/Swagger).
+*   **Quản lý trạng thái (State Management):** Cân nhắc kỹ nơi lưu trữ trạng thái. Tránh lưu trạng thái trong service (stateless services) để dễ dàng mở rộng và phục hồi.
+*   **Xử lý giao dịch phân tán (Distributed Transactions):** Đây là một thách thức lớn trong Microservice. Tránh các giao dịch kéo dài qua nhiều service. Sử dụng các mẫu như Saga Pattern hoặc Eventual Consistency khi cần thiết.
+*   **Bảo mật từ đầu:** Thiết kế bảo mật vào kiến trúc từ giai đoạn đầu, bao gồm xác thực (Authentication), ủy quyền (Authorization), mã hóa dữ liệu truyền tải (TLS/SSL) và dữ liệu lưu trữ.
+
+## 2. Về Phát triển và Kiểm thử
+
+*   **Phát triển "Lát cắt dọc" (Vertical Slice):** Tập trung hoàn thiện một tính năng end-to-end (Frontend -> Backend -> DB) trước khi chuyển sang tính năng khác. Điều này giúp bạn có sản phẩm hoạt động sớm và dễ dàng kiểm thử.
+*   **Kiểm thử tự động:** Viết unit tests, integration tests và end-to-end tests cho từng service. Điều này cực kỳ quan trọng để đảm bảo chất lượng khi có nhiều service.
+*   **Môi trường phát triển cục bộ:** Đảm bảo môi trường phát triển cục bộ (sử dụng Docker Compose) phản ánh gần đúng môi trường triển khai để tránh các lỗi "chỉ chạy trên máy tôi".
+*   **Quản lý Dependencies:** Cẩn thận với các thư viện và phiên bản phụ thuộc. Sử dụng các công cụ quản lý gói (npm, pip, composer) và khóa phiên bản (`package-lock.json`, `requirements.txt`).
+
+## 3. Về Triển khai và Vận hành (trên VPS đơn lẻ)
+
+*   **Tài nguyên VPS hạn chế:**
+    *   **CPU/RAM:** Với gói VPS cơ bản (3 Cores, 2-3GB RAM), bạn sẽ nhanh chóng hết tài nguyên nếu chạy quá nhiều service hoặc service tiêu tốn nhiều bộ nhớ. Cân nhắc tối ưu hóa service để sử dụng ít tài nguyên nhất có thể.
+    *   **Disk I/O:** SSD 50GB là đủ cho nhiều dự án nhỏ, nhưng nếu các service ghi/đọc dữ liệu liên tục hoặc có lượng truy cập cao, hiệu suất ổ đĩa có thể là nút thắt cổ chai.
+*   **Docker và Docker Compose:**
+    *   **Bắt buộc sử dụng:** Docker là công cụ không thể thiếu để đóng gói và chạy các Microservice một cách cô lập. Docker Compose giúp quản lý nhiều container trên một máy chủ.
+    *   **Tối ưu hóa Dockerfile:** Xây dựng Docker image nhỏ gọn, sử dụng multi-stage builds để giảm kích thước image và tăng tốc độ triển khai.
+*   **Nginx làm Reverse Proxy/API Gateway:**
+    *   **Cần thiết:** Nginx sẽ đóng vai trò là điểm vào duy nhất cho tất cả các yêu cầu từ bên ngoài, định tuyến chúng đến các service backend hoặc frontend phù hợp đang chạy trong Docker container.
+    *   **Cấu hình SSL:** Đảm bảo cấu hình HTTPS với Let's Encrypt hoặc chứng chỉ SSL khác để bảo mật giao tiếp.
+*   **Cơ sở dữ liệu:**
+    *   **Chạy trong Docker:** Với VPS đơn lẻ, bạn có thể chạy các DB trong Docker container. Tuy nhiên, cần đảm bảo dữ liệu được lưu trữ trên volume bền vững (`volumes` trong `docker-compose.yml`) để không bị mất khi container bị xóa hoặc cập nhật.
+    *   **Sao lưu (Backup):** Thiết lập cơ chế sao lưu tự động cho tất cả các cơ sở dữ liệu. Đây là một trong những việc quan trọng nhất để tránh mất dữ liệu.
+*   **CI/CD (Continuous Integration/Continuous Deployment):**
+    *   **Tự động hóa:** Thiết lập GitHub Actions (hoặc GitLab CI/CD, Jenkins) để tự động build, kiểm thử và triển khai code lên VPS mỗi khi có thay đổi. Điều này giúp tiết kiệm thời gian và giảm lỗi thủ công.
+    *   **Secrets Management:** Sử dụng GitHub Secrets (hoặc các công cụ quản lý secret khác) để lưu trữ các thông tin nhạy cảm (khóa SSH, mật khẩu DB, Docker Hub credentials) một cách an toàn.
+*   **Giám sát và Ghi log (Monitoring & Logging):**
+    *   **Cần thiết:** Ngay cả trên một VPS, bạn cần biết các service của mình đang hoạt động như thế nào. Cài đặt các công cụ giám sát cơ bản (ví dụ: `htop`, `docker stats`, Prometheus/Grafana nếu có thể) và hệ thống ghi log tập trung (ví dụ: ELK stack hoặc đơn giản là lưu log vào file và xoay vòng).
+    *   **Health Checks:** Cấu hình health checks cho từng service để Docker Compose hoặc Nginx có thể biết khi nào một service không hoạt động và khởi động lại nó.
+*   **Bảo mật VPS:**
+    *   **Tường lửa (UFW/firewalld):** Chỉ mở các cổng cần thiết (22 cho SSH, 80 cho HTTP, 443 cho HTTPS).
+    *   **SSH Key:** Luôn sử dụng SSH key thay vì mật khẩu để đăng nhập SSH.
+    *   **Cập nhật hệ thống:** Thường xuyên cập nhật hệ điều hành và các gói phần mềm trên VPS.
+
+## 4. Về Quản lý Dự án và Quy trình làm việc
+
+*   **Quản lý mã nguồn (Git):** Sử dụng Git và GitHub (hoặc GitLab, Bitbucket) để quản lý mã nguồn, theo dõi thay đổi và cộng tác (ngay cả khi bạn làm một mình).
+*   **Tài liệu hóa:** Ghi lại tất cả các quyết định thiết kế, cấu hình, API, và quy trình triển khai. Tài liệu tốt sẽ giúp bạn rất nhiều khi quay lại dự án sau một thời gian hoặc khi có người khác tham gia.
+*   **Bắt đầu nhỏ, lặp lại:** Đừng cố gắng xây dựng mọi thứ cùng một lúc. Bắt đầu với một service cốt lõi, hoàn thiện nó, triển khai, sau đó lặp lại cho các service khác.
+
+Việc tuân thủ những lưu ý này sẽ giúp bạn xây dựng một hệ thống Microservice ổn định, bảo mật và dễ quản lý hơn trên môi trường VPS đơn lẻ của mình.
+
+
+`
                 }
             };
 
@@ -1826,6 +1676,15 @@ Tài liệu này cung cấp một cái nhìn sâu sắc về cách tổ chức m
                                 </div>
                                 <nav className="docs-nav">
                                     <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Tổng quan</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'introduction' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('introduction')}
+                                        >
+                                            📋 Giới thiệu Dự án
+                                        </div>
+                                    </div>
+                                    <div className="docs-nav-section">
                                         <div className="docs-nav-section-title">Kiến trúc</div>
                                         <div 
                                             className={`docs-nav-item ${activeDocTab === 'overview' ? 'active' : ''}`}
@@ -1841,15 +1700,24 @@ Tài liệu này cung cấp một cái nhìn sâu sắc về cách tổ chức m
                                         </div>
                                     </div>
                                     <div className="docs-nav-section">
-                                        <div className="docs-nav-section-title">Hướng dẫn</div>
-                                        <div className="docs-nav-item">
-                                            🚀 Bắt đầu nhanh
+                                        <div className="docs-nav-section-title">Triển khai</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-order' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-order')}
+                                        >
+                                            📋 Thứ tự Triển khai
                                         </div>
-                                        <div className="docs-nav-item">
-                                            ⚙️ Cấu hình
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-guide' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-guide')}
+                                        >
+                                            🚀 Hướng dẫn Chi tiết
                                         </div>
-                                        <div className="docs-nav-item">
-                                            🔧 Triển khai
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-notes' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-notes')}
+                                        >
+                                            ⚠️ Lưu ý Triển khai
                                         </div>
                                     </div>
                                 </nav>
@@ -1886,15 +1754,48 @@ Tài liệu này cung cấp một cái nhìn sâu sắc về cách tổ chức m
                                 </div>
                                 <nav className="docs-nav">
                                     <div className="docs-nav-section">
-                                        <div className="docs-nav-section-title">Thông tin</div>
-                                        <div className="docs-nav-item active">
-                                            📧 Thông tin liên hệ
+                                        <div className="docs-nav-section-title">Tổng quan</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'introduction' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('introduction')}
+                                        >
+                                            📋 Giới thiệu Dự án
                                         </div>
-                                        <div className="docs-nav-item">
-                                            💬 Hỗ trợ kỹ thuật
+                                    </div>
+                                    <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Kiến trúc</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'overview' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('overview')}
+                                        >
+                                            📁 Tổng quan Microservice
                                         </div>
-                                        <div className="docs-nav-item">
-                                            📋 Báo cáo lỗi
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'details' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('details')}
+                                        >
+                                            🏗️ Chi tiết Ứng dụng
+                                        </div>
+                                    </div>
+                                    <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Triển khai</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-order' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-order')}
+                                        >
+                                            📋 Thứ tự Triển khai
+                                        </div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-guide' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-guide')}
+                                        >
+                                            🚀 Hướng dẫn Chi tiết
+                                        </div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'deployment-notes' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('deployment-notes')}
+                                        >
+                                            ⚠️ Lưu ý Triển khai
                                         </div>
                                     </div>
                                 </nav>
