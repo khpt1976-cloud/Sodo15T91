@@ -1,27 +1,40 @@
-# Sodo15T91 - Microservice Architecture Diagram
+# Sodo15T91 - Hệ thống Quản lý Nhật ký Thi công Chuyên nghiệp
 
-🎯 **Phiên bản tối ưu hóa chỉ hiển thị sơ đồ kiến trúc microservice**
+🎯 **Hệ thống quản lý dự án xây dựng toàn diện với giao diện chuyên nghiệp**
+
+## ⚠️ QUAN TRỌNG - TRANG CHỦ ĐÚNG
+
+**🏠 TRANG CHỦ CHÍNH THỨC:** `Sodo/sodochuan.html`
+
+❌ **KHÔNG TRUY CẬP:** `Sodo/index.html` (chỉ là trang đăng nhập)
+✅ **TRUY CẬP:** `Sodo/sodochuan.html` (trang chủ đầy đủ tính năng)
 
 ## 📋 Tổng quan
 
-Đây là phiên bản được tối ưu hóa của Sodo15T9, tập trung hoàn toàn vào việc hiển thị sơ đồ kiến trúc microservice. Phần documentation đã được loại bỏ hoàn toàn để tạo ra một ứng dụng gọn nhẹ và tập trung.
+Hệ thống quản lý nhật ký thi công chuyên nghiệp với giao diện đẹp, tích hợp video giới thiệu, menu navigation đầy đủ và các tính năng quản lý dự án xây dựng theo chuẩn Việt Nam.
 
 ## ✨ Tính năng
 
-- 🏗️ **Sơ đồ kiến trúc microservice đầy đủ** - Hiển thị tất cả các thành phần hệ thống
+- 🏠 **Trang chủ chuyên nghiệp** - Giao diện đẹp với gradient background
+- 📹 **Video giới thiệu** - Hướng dẫn sử dụng hệ thống
+- 📊 **Quản lý Dự án** - Tạo và quản lý nhiều dự án xây dựng
+- 📝 **Nhật ký Thi công** - Theo chuẩn Việt Nam với thông tin đầy đủ
+- 👥 **Quản lý Nhóm** - Phân quyền theo vai trò Admin, Manager, User
+- 🏗️ **Sơ đồ kiến trúc microservice** - Hiển thị tất cả thành phần hệ thống
 - 🔍 **Zoom và Pan tương tác** - Phóng to/thu nhỏ và di chuyển sơ đồ
 - 🔐 **Hệ thống đăng nhập** - Bảo mật truy cập
-- 🧭 **Navigation menu sạch sẽ** - Chỉ các mục cần thiết
+- 🧭 **Navigation menu đầy đủ** - Trang chủ, Sơ đồ, API, Liên hệ
 - 📱 **Responsive design** - Hoạt động tốt trên mọi thiết bị
 
 ## 🚀 Cách sử dụng
 
-### Truy cập ứng dụng:
-1. Mở file `Sodo/index.html` trong trình duyệt
-2. Đăng nhập với thông tin:
-   - **Username:** `Hpt`
-   - **Password:** `Hpt@768696`
-3. Khám phá sơ đồ microservice với các chức năng zoom/pan
+### ⚠️ QUAN TRỌNG - Truy cập đúng trang chủ:
+1. **TRANG CHỦ ĐÚNG:** Mở `Sodo/sodochuan.html` trong trình duyệt
+2. **KHÔNG PHẢI:** `Sodo/index.html` (chỉ là trang đăng nhập)
+
+### Thông tin đăng nhập (nếu cần):
+- **Username:** `Hpt`
+- **Password:** `Hpt@768696`
 
 ### Chạy server local:
 ```bash
@@ -31,7 +44,7 @@ python3 -m http.server 8000
 # Hoặc sử dụng Node.js
 npx http-server
 
-# Truy cập: http://localhost:8000/Sodo/index.html
+# Truy cập TRANG CHỦ: http://localhost:8000/Sodo/sodochuan.html
 ```
 
 ## 🏗️ Cấu trúc dự án
