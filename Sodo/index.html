@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập hệ thống</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0f1419 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+            animation: float 25s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .login-container {
+            background: rgba(15, 20, 25, 0.95);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
+                        0 0 0 1px rgba(59, 130, 246, 0.1);
+            width: 100%;
+            max-width: 420px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, 
+                rgba(59, 130, 246, 0.3) 0%, 
+                rgba(14, 165, 233, 0.3) 50%, 
+                rgba(6, 182, 212, 0.3) 100%);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+
+        .login-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 50%, #06b6d4 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #f87171;
+            font-size: 14px;
+            margin-top: 12px;
+            text-align: center;
+            display: none;
+            padding: 12px;
+            background: rgba(248, 113, 113, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .success-message {
+            color: #10b981;
+            font-size: 14px;
+            margin-top: 12px;
+            text-align: center;
+            display: none;
+            padding: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+        }
+
+
+
+        @keyframes containerFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Glow effect on focus */
+        .form-group input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1),
+                        0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Subtle pulse animation for the container */
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
+                           0 0 0 1px rgba(59, 130, 246, 0.1);
+            }
+            50% { 
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
+                           0 0 0 1px rgba(59, 130, 246, 0.2);
+            }
+        }
+
+        .login-container {
+            animation: containerFloat 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
+        }
+
+        /* Enhanced button hover effect */
+        .login-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4),
+                        0 0 0 1px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Subtle text glow for the title */
+        .login-header h1 {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Sơ đồ dự án Hpt</h1>
+            <p>Sơ đồ microservice</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Đăng nhập</button>
+            
+            <div class="loading" id="loading"></div>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </form>
+        
+        <div class="footer">
+            <p>© 2025 Sơ đồ dự án Hpt • Powered by Advanced Technology</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const loading = document.getElementById('loading');
+            
+            // Ẩn các thông báo trước đó
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            // Hiển thị loading
+            loading.style.display = 'block';
+            
+            // Giả lập thời gian xử lý
+            setTimeout(() => {
+                loading.style.display = 'none';
+                
+                // Kiểm tra thông tin đăng nhập
+                if (username === 'Hpt' && password === 'Hpt@768696') {
+                    successMessage.textContent = 'Đăng nhập thành công! Đang chuyển hướng...';
+                    successMessage.style.display = 'block';
+                    
+                    // Chuyển hướng sau 1.5 giây
+                    setTimeout(() => {
+                        window.location.href = 'sodochuan.html';
+                    }, 1500);
+                } else {
+                    errorMessage.textContent = 'Tên đăng nhập hoặc mật khẩu không chính xác!';
+                    errorMessage.style.display = 'block';
+                    
+                    // Làm rung form khi sai
+                    document.querySelector('.login-container').style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        document.querySelector('.login-container').style.animation = '';
+                    }, 500);
+                }
+            }, 1000);
+        });
+
+        // Thêm hiệu ứng rung
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Tự động focus vào ô username khi trang load
+        window.addEventListener('load', () => {
+            document.getElementById('username').focus();
+        });
+
+        // Cho phép nhấn Enter để submit
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+</body>
+</html>

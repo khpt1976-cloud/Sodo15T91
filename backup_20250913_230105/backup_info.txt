@@ -1,0 +1,18 @@
+🔐 BACKUP THÔNG TIN ĐĂNG NHẬP
+============================
+Ngày tạo: Sat Sep 13 23:01:05 UTC 2025
+Thư mục: backup_20250913_230105
+
+📁 Files được backup:
+- index.html (root redirect)
+- login_index.html (trang đăng nhập)
+- sodochuan.html (trang sơ đồ)
+
+🔐 Thông tin đăng nhập:
+- Username: Hpt
+- Password: Hpt@768696
+
+🔄 Để khôi phục:
+cp backup_20250913_230105/index.html ./
+cp backup_20250913_230105/login_index.html Sodo/index.html
+cp backup_20250913_230105/sodochuan.html Sodo/
