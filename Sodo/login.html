@@ -79,7 +79,13 @@
             margin-bottom: 30px;
         }
 
-
+        .login-header h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
 
         .login-header p {
             color: rgba(255, 255, 255, 0.7);
@@ -103,20 +109,20 @@
         .form-group input {
             width: 100%;
             padding: 16px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.2);
             border-radius: 12px;
+            background: rgba(15, 20, 25, 0.8);
+            color: white;
             font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: rgba(59, 130, 246, 0.5);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-1px);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1),
+                        0 0 20px rgba(59, 130, 246, 0.2);
         }
 
         .form-group input::placeholder {
@@ -133,70 +139,48 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            margin-top: 12px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .login-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+        .login-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4),
+                        0 0 0 1px rgba(59, 130, 246, 0.3);
         }
-
-        .login-btn:hover::before {
-            left: 100%;
-        }
-
-
 
         .login-btn:active {
-            transform: translateY(0);
+            transform: translateY(0) scale(0.98);
         }
 
         .error-message {
-            color: #f87171;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-            display: none;
-            padding: 12px;
-            background: rgba(248, 113, 113, 0.1);
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 12px 16px;
             border-radius: 8px;
-            border: 1px solid rgba(248, 113, 113, 0.2);
-            backdrop-filter: blur(10px);
+            margin-top: 16px;
+            font-size: 14px;
+            display: none;
         }
 
         .success-message {
             color: #10b981;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-            display: none;
-            padding: 12px;
             background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 12px 16px;
             border-radius: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            backdrop-filter: blur(10px);
+            margin-top: 16px;
+            font-size: 14px;
+            display: none;
         }
 
         .loading {
             display: none;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .loading::after {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
+            margin: 16px auto 0;
+            width: 24px;
+            height: 24px;
             border: 2px solid #667eea;
             border-radius: 50%;
             border-top-color: transparent;
@@ -216,20 +200,15 @@
             font-size: 13px;
         }
 
-
-
         @keyframes containerFloat {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
 
-        /* Glow effect on focus */
-        .form-group input:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1),
-                        0 0 20px rgba(59, 130, 246, 0.2);
+        .login-container {
+            animation: containerFloat 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
         }
 
-        /* Subtle pulse animation for the container */
         @keyframes pulse {
             0%, 100% { 
                 box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
@@ -241,20 +220,10 @@
             }
         }
 
-        .login-container {
-            animation: containerFloat 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
-        }
-
-        /* Enhanced button hover effect */
-        .login-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4),
-                        0 0 0 1px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Subtle text glow for the title */
-        .login-header h1 {
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
     </style>
 </head>
@@ -314,10 +283,10 @@
                     successMessage.textContent = 'Đăng nhập thành công! Đang chuyển hướng...';
                     successMessage.style.display = 'block';
                     
-                    // Chuyển hướng sau 1.5 giây
+                    // Chuyển hướng sau 1.5 giây - FORCE redirect to diagram
                     setTimeout(() => {
-                        console.log('Redirecting to diagram.html');
-                        window.location.replace('diagram.html?t=' + Date.now());
+                        console.log('FORCING redirect to diagram.html');
+                        window.location.replace('diagram.html');
                     }, 1500);
                 } else {
                     errorMessage.textContent = 'Tên đăng nhập hoặc mật khẩu không chính xác!';
@@ -331,17 +300,6 @@
                 }
             }, 1000);
         });
-
-        // Thêm hiệu ứng rung
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                25% { transform: translateX(-5px); }
-                75% { transform: translateX(5px); }
-            }
-        `;
-        document.head.appendChild(style);
 
         // Tự động focus vào ô username khi trang load
         window.addEventListener('load', () => {
