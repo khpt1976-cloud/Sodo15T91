@@ -401,6 +401,245 @@
             text-decoration: underline;
         }
         
+        /* All-Hands Style Documentation */
+        .docs-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+            background: #fafafa;
+        }
+        
+        .docs-sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 2rem 0;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+        
+        .docs-sidebar-header {
+            padding: 0 1.5rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 1rem;
+        }
+        
+        .docs-sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+        }
+        
+        .docs-nav {
+            padding: 0 1rem;
+        }
+        
+        .docs-nav-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .docs-nav-section-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            padding: 0 0.5rem;
+        }
+        
+        .docs-nav-item {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 0.25rem;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+        
+        .docs-nav-item:hover {
+            background: #f3f4f6;
+            color: #111827;
+        }
+        
+        .docs-nav-item.active {
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: 500;
+        }
+        
+        .docs-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            max-width: calc(100vw - 280px);
+        }
+        
+        .docs-content-inner {
+            max-width: 800px;
+        }
+        
+        .docs-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .docs-breadcrumb-item {
+            color: #6b7280;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .docs-breadcrumb-item:hover {
+            color: #1d4ed8;
+        }
+        
+        .docs-breadcrumb-separator {
+            color: #d1d5db;
+        }
+        
+        .docs-article {
+            background: white;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .docs-article h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+        }
+        
+        .docs-article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .docs-article h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        .docs-article p {
+            color: #374151;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .docs-article pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        
+        .docs-article code {
+            background: #f3f4f6;
+            color: #1f2937;
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .docs-article pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .docs-article ul, .docs-article ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .docs-article li {
+            color: #374151;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .docs-article strong {
+            font-weight: 600;
+            color: #111827;
+        }
+        
+        .docs-article blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .docs-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .docs-back-btn:hover {
+            background: #e5e7eb;
+            border-color: #9ca3af;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .docs-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .docs-sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .docs-content {
+                margin-left: 0;
+                max-width: 100vw;
+                padding: 1rem;
+            }
+            
+            .docs-article {
+                padding: 1.5rem;
+            }
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -467,6 +706,7 @@
             const [isLoggedIn, setIsLoggedIn] = useState(false);
             const [showLoginModal, setShowLoginModal] = useState(false);
             const [loginError, setLoginError] = useState('');
+            const [activeDocTab, setActiveDocTab] = useState('overview');
 
             // Kiểm tra trạng thái đăng nhập khi load trang
             React.useEffect(() => {
@@ -519,6 +759,953 @@
                 setLoginError('');
             };
 
+            // Nội dung tài liệu
+            const documentationContent = {
+                overview: {
+                    title: "Kiến trúc Thư mục Dự án Microservice",
+                    content: `# Kiến trúc Thư mục Dự án Microservice
+
+Đây là kiến trúc thư mục tổng quan cho dự án Microservice, được tổ chức để dễ dàng quản lý và mở rộng. Cấu trúc này phản ánh sự phân chia rõ ràng giữa các dịch vụ backend, ứng dụng frontend, các thành phần dùng chung và hạ tầng.
+
+\`\`\`
+/project-root
+├── services/                                   # Chứa mã nguồn của tất cả các Microservice Backend
+│   ├── cart-service/                           # Dịch vụ giỏ hàng
+│   ├── product-service/                        # Dịch vụ sản phẩm
+│   ├── news-service/                           # Dịch vụ tin tức
+│   ├── design-calculation-service/             # Dịch vụ tính toán thiết kế
+│   ├── football-service/                       # Dịch vụ bóng đá
+│   ├── communication-log-service/              # Dịch vụ nhật ký thi công
+│   ├── chatbot-service/                        # Dịch vụ chatbot
+│   ├── payment-service/                        # Dịch vụ thanh toán
+│   ├── user-service/                           # Dịch vụ người dùng
+│   ├── shell-config-service/                   # Dịch vụ cấu hình shell
+│   ├── admin-service/                          # Dịch vụ quản trị hệ thống
+│   ├── agent-management-service/               # Dịch vụ quản lý đại lý
+│   └── agent-policy-service/                   # Dịch vụ chính sách đại lý
+│
+├── frontend/                                   # Chứa mã nguồn của tất cả các ứng dụng Frontend
+│   ├── shell-app-user/                         # Ứng dụng Frontend chính cho người dùng cuối
+│   ├── shell-app-admin/                        # Ứng dụng Frontend chính cho quản trị viên
+│   ├── shell-config-admin-frontend/            # Ứng dụng Frontend độc lập cho quản trị cấu hình Shell
+│   ├── cart-service-frontend/                  # Giao diện người dùng giỏ hàng
+│   ├── cart-service-admin/                     # Giao diện quản trị giỏ hàng
+│   ├── product-service-frontend/               # Giao diện người dùng sản phẩm
+│   ├── product-service-admin/                  # Giao diện quản trị sản phẩm
+│   ├── news-service-frontend/                  # Giao diện người dùng tin tức
+│   ├── news-service-admin/                     # Giao diện quản trị tin tức
+│   ├── design-calculation-frontend/            # Giao diện người dùng tính toán thiết kế
+│   ├── design-calculation-admin/               # Giao diện quản trị tính toán thiết kế
+│   ├── football-service-frontend/              # Giao diện người dùng bóng đá
+│   ├── football-service-admin/                 # Giao diện quản trị bóng đá
+│   ├── communication-log-frontend/             # Giao diện người dùng nhật ký thi công
+│   ├── communication-log-admin/                # Giao diện quản trị nhật ký thi công
+│   ├── chatbot-service-frontend/               # Giao diện người dùng chatbot
+│   ├── chatbot-service-admin/                  # Giao diện quản trị chatbot
+│   ├── payment-service-frontend/               # Giao diện người dùng thanh toán
+│   ├── payment-service-admin/                  # Giao diện quản trị thanh toán
+│   ├── user-service-frontend/                  # Giao diện người dùng
+│   ├── user-service-admin/                     # Giao diện quản trị người dùng
+│   ├── admin-service-frontend/                 # Giao diện người dùng quản trị
+│   ├── admin-service-admin/                    # Giao diện quản trị hệ thống
+│   ├── agent-management-frontend/              # Giao diện người dùng quản lý đại lý
+│   ├── agent-management-admin/                 # Giao diện quản trị quản lý đại lý
+│   ├── agent-policy-frontend/                  # Giao diện người dùng chính sách đại lý
+│   └── agent-policy-admin/                     # Giao diện quản trị chính sách đại lý
+│
+├── api-gateway/                                # Cấu hình và mã nguồn cho API Gateway
+│   ├── user-gateway/                           # API Gateway cho người dùng cuối
+│   └── admin-gateway/                          # API Gateway cho quản trị viên
+│
+├── shared/                                     # Chứa các thư viện, module dùng chung
+│   ├── common-models/                          # Các định nghĩa model dùng chung
+│   ├── utils/                                  # Các tiện ích chung
+│   └── config/                                 # Cấu hình chung
+│
+├── infrastructure/                             # Cấu hình và mã nguồn liên quan đến hạ tầng
+│   ├── kubernetes/                             # Cấu hình Kubernetes
+│   ├── terraform/                              # Mã Terraform để quản lý hạ tầng
+│   ├── ansible/                                # Playbook Ansible để cấu hình máy chủ
+│   ├── monitoring/                             # Cấu hình cho các công cụ giám sát
+│   └── logging/                                # Cấu hình cho hệ thống logging
+│
+├── docs/                                       # Tài liệu dự án
+│   ├── architecture/                           # Tài liệu kiến trúc
+│   ├── deployment/                             # Tài liệu triển khai
+│   └── README.md
+│
+├── scripts/                                    # Các script tự động hóa
+│   ├── ci-cd/                                  # Script cho CI/CD pipelines
+│   ├── deploy/                                 # Script triển khai
+│   └── setup/                                  # Script cài đặt môi trường
+│
+├── .gitignore                                  # Các file/thư mục bỏ qua bởi Git
+├── README.md                                   # File README tổng quan dự án
+└── docker-compose.yml                          # File Docker Compose cho môi trường phát triển
+\`\`\`
+
+## Giải thích cấu trúc:
+
+* **\`services/\`**: Chứa tất cả các microservice backend. Mỗi thư mục con là một microservice độc lập với mã nguồn, Dockerfile, và các file cấu hình riêng.
+* **\`frontend/\`**: Chứa tất cả các ứng dụng frontend. Mỗi thư mục con là một ứng dụng frontend độc lập, bao gồm cả Shell Config Admin Frontend được tách biệt.
+* **\`api-gateway/\`**: Chứa cấu hình và mã nguồn cho các API Gateway, phân tách giữa người dùng và quản trị.
+* **\`shared/\`**: Chứa các module, thư viện, hoặc định nghĩa dùng chung giữa các dịch vụ và ứng dụng để tránh trùng lặp mã.
+* **\`infrastructure/\`**: Chứa tất cả các cấu hình và mã nguồn liên quan đến hạ tầng, như Kubernetes manifests, Terraform scripts, Ansible playbooks, cấu hình monitoring và logging.
+* **\`docs/\`**: Chứa tất cả tài liệu của dự án, bao gồm tài liệu kiến trúc, triển khai, và các hướng dẫn khác.
+* **\`scripts/\`**: Chứa các script tự động hóa cho các tác vụ như CI/CD, triển khai, và thiết lập môi trường.
+
+Cấu trúc này giúp duy trì sự rõ ràng, dễ dàng mở rộng và quản lý các thành phần trong một hệ thống microservice phức tạp.`
+                },
+                details: {
+                    title: "Kiến trúc Chi tiết Các Ứng dụng Độc lập",
+                    content: `# Kiến trúc Chi tiết Các Ứng dụng Độc lập
+
+Đây là tài liệu trình bày kiến trúc thư mục chi tiết cho từng "ứng dụng hoàn chỉnh có thể độc lập hoàn toàn" trong dự án Microservice của bạn. Mỗi phần dưới đây đại diện cho một lát cắt dọc (vertical slice) bao gồm Backend Service, Frontend Components (User và Admin nếu có), và Database tương ứng.
+
+## 1. Ứng dụng Giỏ hàng (Cart Application)
+
+Ứng dụng Giỏ hàng bao gồm \`Cart Service\` (Backend), \`Cart Service Frontend\` (Giao diện người dùng) và \`Cart Service Admin\` (Giao diện quản trị), cùng với \`Cart DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── cart-service/                               # Mã nguồn của Dịch vụ Giỏ hàng
+│       ├── src/                                    # Mã nguồn chính của dịch vụ
+│       │   ├── api/                                # Định nghĩa các API endpoints
+│       │   │   ├── cart_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/                               # Logic nghiệp vụ cốt lõi
+│       │   │   └── cart_service.py
+│       │   ├── models/                             # Định nghĩa các mô hình dữ liệu
+│       │   │   ├── cart_item.py
+│       │   │   └── user_cart.py
+│       │   ├── repositories/                       # Lớp tương tác với Cart DB
+│       │   │   └── cart_repository.py
+│       │   ├── utils/                              # Các hàm tiện ích chung
+│       │   │   └── error_handlers.py
+│       │   ├── config.py                           # Cấu hình của dịch vụ
+│       │   └── main.py                             # Điểm khởi đầu của ứng dụng
+│       ├── tests/                                  # Các bài kiểm thử
+│       ├── Dockerfile                              # Định nghĩa Docker image
+│       ├── requirements.txt                        # Thư viện Python
+│       ├── .env.example                            # File mẫu biến môi trường
+│       └── README.md
+│
+├── frontend/
+│   ├── cart-service-frontend/                      # Giao diện người dùng Giỏ hàng
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang giỏ hàng, trang thanh toán
+│   │   │   │   └── CartPage.js
+│   │   │   ├── services/                           # Tương tác với Cart Service API
+│   │   │   │   └── cart.api.js
+│   │   │   ├── store/
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── cart-service-admin/                         # Giao diện quản trị Giỏ hàng
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý đơn hàng, sản phẩm trong giỏ
+│       │   │   └── OrderManagementPage.js
+│       │   ├── services/                           # Tương tác với Cart Service API (Admin)
+│       │   │   └── admin.cart.api.js
+│       │   ├── store/
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Cart DB (được quản lý bởi cart-service)
+\`\`\`
+
+## 2. Ứng dụng Sản phẩm (Product Application)
+
+Ứng dụng Sản phẩm bao gồm \`Product Service\` (Backend), \`Product Service Frontend\` và \`Product Service Admin\`, cùng với \`Product DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── product-service/                            # Mã nguồn của Dịch vụ Sản phẩm
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── product_controller.js
+│       │   │   └── health_check_controller.js
+│       │   ├── core/
+│       │   │   └── product_service.js
+│       │   ├── models/
+│       │   │   └── product.js
+│       │   ├── repositories/                       # Lớp tương tác với Product DB
+│       │   │   └── product_repository.js
+│       │   ├── config.js
+│       │   └── app.js
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── package.json
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── product-service-frontend/                   # Giao diện người dùng Sản phẩm
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang danh sách sản phẩm, chi tiết sản phẩm
+│   │   │   │   └── ProductListPage.js
+│   │   │   ├── services/                           # Tương tác với Product Service API
+│   │   │   │   └── product.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── product-service-admin/                      # Giao diện quản trị Sản phẩm
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang thêm/sửa/xóa sản phẩm
+│       │   │   └── ProductEditorPage.js
+│       │   ├── services/                           # Tương tác với Product Service API (Admin)
+│       │   │   └── admin.product.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Product DB (được quản lý bởi product-service)
+\`\`\`
+
+## 3. Ứng dụng Tin tức (News Application)
+
+\`\`\`
+/project-root
+├── services/
+│   └── news-service/                               # Mã nguồn của Dịch vụ Tin tức
+│       ├── src/
+│       │   ├── handlers/
+│       │   │   ├── news_handler.go
+│       │   │   └── health_handler.go
+│       │   ├── domain/
+│       │   │   └── news.go
+│       │   ├── storage/                            # Lớp tương tác với News DB
+│       │   │   └── news_repository.go
+│       │   ├── config.go
+│       │   └── main.go
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── go.mod
+│       ├── go.sum
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── news-service-frontend/                      # Giao diện người dùng Tin tức
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang danh sách tin tức, chi tiết tin tức
+│   │   │   │   └── NewsListPage.js
+│   │   │   ├── services/                           # Tương tác với News Service API
+│   │   │   │   └── news.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── news-service-admin/                         # Giao diện quản trị Tin tức
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang thêm/sửa/xóa tin tức
+│       │   │   └── NewsEditorPage.js
+│       │   ├── services/                           # Tương tác với News Service API (Admin)
+│       │   │   └── admin.news.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: News DB (được quản lý bởi news-service)
+\`\`\`
+
+## 4. Ứng dụng Tính toán Thiết kế (Design Calculation Application)
+
+\`\`\`
+/project-root
+├── services/
+│   └── design-calculation-service/                 # Mã nguồn của Dịch vụ Tính toán Thiết kế
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── calculation_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── calculation_engine.py           # Logic tính toán chính
+│       │   ├── models/
+│       │   │   └── design_params.py
+│       │   ├── repositories/                       # Lớp tương tác với Design Calculation DB
+│       │   │   └── calculation_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── design-calculation-frontend/                # Giao diện người dùng Tính toán Thiết kế
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang nhập thông số, hiển thị kết quả
+│   │   │   │   └── CalculationPage.js
+│   │   │   ├── services/                           # Tương tác với Design Calculation Service API
+│   │   │   │   └── calculation.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── design-calculation-admin/                   # Giao diện quản trị Tính toán Thiết kế
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý công thức, tham số
+│       │   │   └── FormulaManagementPage.js
+│       │   ├── services/                           # Tương tác với Design Calculation Service API (Admin)
+│       │   │   └── admin.calculation.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Design Calculation DB (được quản lý bởi design-calculation-service)
+\`\`\`
+
+## 5. Ứng dụng Bóng đá (Football Application)
+
+Ứng dụng này bao gồm \`Football Service\` (Backend), \`Football Service Frontend\` và \`Football Service Admin\`, cùng với \`Football DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── football-service/                           # Mã nguồn của Dịch vụ Bóng đá
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── match_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── match_data_processor.py
+│       │   ├── models/
+│       │   │   └── match.py
+│       │   ├── repositories/                       # Lớp tương tác với Football DB
+│       │   │   └── match_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── football-service-frontend/                  # Giao diện người dùng Bóng đá
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang lịch thi đấu, kết quả, bảng xếp hạng
+│   │   │   │   └── MatchListPage.js
+│   │   │   ├── services/                           # Tương tác với Football Service API
+│   │   │   │   └── football.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── football-service-admin/                     # Giao diện quản trị Bóng đá
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý trận đấu, đội bóng, cầu thủ
+│       │   │   └── MatchManagementPage.js
+│       │   ├── services/                           # Tương tác với Football Service API (Admin)
+│       │   │   └── admin.football.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Football DB (được quản lý bởi football-service)
+\`\`\`
+
+## 6. Ứng dụng Nhật ký thi công (Communication Log Application)
+
+Ứng dụng này bao gồm \`Communication Log Service\` (Backend), \`Communication Log Frontend\` và \`Communication Log Admin\`, cùng với \`Communication Log DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── communication-log-service/                  # Mã nguồn của Dịch vụ Nhật ký thi công
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── log_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── log_manager.py
+│       │   ├── models/
+│       │   │   └── communication_log.py
+│       │   ├── repositories/                       # Lớp tương tác với Communication Log DB
+│       │   │   └── log_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── communication-log-frontend/                 # Giao diện người dùng Nhật ký thi công
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang xem/thêm nhật ký
+│   │   │   │   └── LogEntryPage.js
+│   │   │   ├── services/                           # Tương tác với Communication Log Service API
+│   │   │   │   └── log.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── communication-log-admin/                    # Giao diện quản trị Nhật ký thi công
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý các loại nhật ký, người dùng
+│       │   │   └── LogTypeManagementPage.js
+│       │   ├── services/                           # Tương tác với Communication Log Service API (Admin)
+│       │   │   └── admin.log.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Communication Log DB (được quản lý bởi communication-log-service)
+\`\`\`
+
+## 7. Ứng dụng Chatbot (Chatbot Application)
+
+Ứng dụng này bao gồm \`Chatbot Service\` (Backend), \`Chatbot Service Frontend\` và \`Chatbot Service Admin\`, cùng với \`Chatbot DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── chatbot-service/                            # Mã nguồn của Dịch vụ Chatbot
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── message_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── dialog_manager.py               # Logic xử lý hội thoại
+│       │   ├── models/
+│       │   │   └── message.py
+│       │   ├── repositories/                       # Lớp tương tác với Chatbot DB
+│       │   │   └── conversation_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── chatbot-service-frontend/                   # Giao diện người dùng Chatbot
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang giao diện chatbot
+│   │   │   │   └── ChatWindow.js
+│   │   │   ├── services/                           # Tương tác với Chatbot Service API
+│   │   │   │   └── chatbot.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── chatbot-service-admin/                      # Giao diện quản trị Chatbot
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý kịch bản, câu hỏi/trả lời
+│       │   │   └── DialogManagementPage.js
+│       │   ├── services/                           # Tương tác với Chatbot Service API (Admin)
+│       │   │   └── admin.chatbot.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Chatbot DB (được quản lý bởi chatbot-service)
+\`\`\`
+
+## 8. Ứng dụng Thanh toán (Payment Application)
+
+Ứng dụng này bao gồm \`Payment Service\` (Backend), \`Payment Service Frontend\` và \`Payment Service Admin\`, cùng với \`Payment DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── payment-service/                            # Mã nguồn của Dịch vụ Thanh toán
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── payment_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── payment_processor.py            # Logic xử lý thanh toán
+│       │   ├── models/
+│       │   │   └── transaction.py
+│       │   ├── repositories/                       # Lớp tương tác với Payment DB
+│       │   │   └── transaction_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── payment-service-frontend/                   # Giao diện người dùng Thanh toán
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang thanh toán, lịch sử giao dịch
+│   │   │   │   └── PaymentPage.js
+│   │   │   ├── services/                           # Tương tác với Payment Service API
+│   │   │   │   └── payment.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── payment-service-admin/                      # Giao diện quản trị Thanh toán
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý giao dịch, hoàn tiền
+│       │   │   └── TransactionManagementPage.js
+│       │   ├── services/                           # Tương tác với Payment Service API (Admin)
+│       │   │   └── admin.payment.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Payment DB (được quản lý bởi payment-service)
+\`\`\`
+
+## 9. Ứng dụng Người dùng (User Application)
+
+Ứng dụng này bao gồm \`User Service\` (Backend), \`User Service Frontend\` và \`User Service Admin\`, cùng với \`User DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── user-service/                               # Mã nguồn của Dịch vụ Người dùng
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── user_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── user_manager.py
+│       │   ├── models/
+│       │   │   └── user.py
+│       │   ├── repositories/                       # Lớp tương tác với User DB
+│       │   │   └── user_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── user-service-frontend/                      # Giao diện người dùng Người dùng
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang đăng ký, đăng nhập, hồ sơ cá nhân
+│   │   │   │   └── ProfilePage.js
+│   │   │   ├── services/                           # Tương tác với User Service API
+│   │   │   │   └── user.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── user-service-admin/                         # Giao diện quản trị Người dùng
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý người dùng, phân quyền
+│       │   │   └── UserManagementPage.js
+│       │   ├── services/                           # Tương tác với User Service API (Admin)
+│       │   │   └── admin.user.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: User DB (được quản lý bởi user-service)
+\`\`\`
+
+## 10. Ứng dụng Quản trị (Admin Application)
+
+Ứng dụng này bao gồm \`Admin Service\` (Backend), \`Admin Service Frontend\` và \`Admin Service Admin\`, cùng với \`Admin DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── admin-service/                              # Mã nguồn của Dịch vụ Quản trị
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── dashboard_controller.js
+│       │   │   └── health_check_controller.js
+│       │   ├── core/
+│       │   │   └── system_monitor.js
+│       │   ├── models/
+│       │   │   └── audit_log.js
+│       │   ├── repositories/                       # Lớp tương tác với Admin DB
+│       │   │   └── audit_log_repository.js
+│       │   ├── config.js
+│       │   └── app.js
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── package.json
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── admin-service-frontend/                     # Giao diện người dùng Quản trị (Dashboard)
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang dashboard, báo cáo hệ thống
+│   │   │   │   └── DashboardPage.js
+│   │   │   ├── services/                           # Tương tác với Admin Service API
+│   │   │   │   └── admin.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── admin-service-admin/                        # Giao diện quản trị Admin (cấu hình hệ thống)
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang cấu hình hệ thống, quản lý vai trò
+│       │   │   └── SystemConfigPage.js
+│       │   ├── services/                           # Tương tác với Admin Service API (Admin)
+│       │   │   └── super.admin.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Admin DB (được quản lý bởi admin-service)
+\`\`\`
+
+## 11. Ứng dụng Quản lý Đại lý (Agent Management Application)
+
+Ứng dụng này bao gồm \`Agent Management Service\` (Backend), \`Agent Management Frontend\` và \`Agent Management Admin\`, cùng với \`Agent Management DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── agent-management-service/                   # Mã nguồn của Dịch vụ Quản lý Đại lý
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── agent_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── agent_manager.py
+│       │   ├── models/
+│       │   │   └── agent.py
+│       │   ├── repositories/                       # Lớp tương tác với Agent Management DB
+│       │   │   └── agent_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── agent-management-frontend/                  # Giao diện người dùng Quản lý Đại lý
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang danh sách đại lý, thông tin đại lý
+│   │   │   │   └── AgentListPage.js
+│   │   │   ├── services/                           # Tương tác với Agent Management Service API
+│   │   │   │   └── agent.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── agent-management-admin/                     # Giao diện quản trị Quản lý Đại lý
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang thêm/sửa/xóa đại lý, quản lý hoa hồng
+│       │   │   └── AgentEditorPage.js
+│       │   ├── services/                           # Tương tác với Agent Management Service API (Admin)
+│       │   │   └── admin.agent.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Agent Management DB (được quản lý bởi agent-management-service)
+\`\`\`
+
+## 12. Ứng dụng Chính sách Đại lý (Agent Policy Application)
+
+Ứng dụng này bao gồm \`Agent Policy Service\` (Backend), \`Agent Policy Frontend\` và \`Agent Policy Admin\`, cùng với \`Agent Policy DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── agent-policy-service/                       # Mã nguồn của Dịch vụ Chính sách Đại lý
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── policy_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── policy_engine.py
+│       │   ├── models/
+│       │   │   └── policy.py
+│       │   ├── repositories/                       # Lớp tương tác với Agent Policy DB
+│       │   │   └── policy_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── agent-policy-frontend/                      # Giao diện người dùng Chính sách Đại lý
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang xem các chính sách áp dụng
+│   │   │   │   └── PolicyViewPage.js
+│   │   │   ├── services/                           # Tương tác với Agent Policy Service API
+│   │   │   │   └── policy.api.js
+│   │   │   └── App.js
+│   │   ├── package.json
+│   │   └── README.md
+│   └── agent-policy-admin/                         # Giao diện quản trị Chính sách Đại lý
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý, tạo mới, chỉnh sửa chính sách
+│       │   │   └── PolicyEditorPage.js
+│       │   ├── services/                           # Tương tác với Agent Policy Service API (Admin)
+│       │   │   └── admin.policy.api.js
+│       │   └── App.js
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Agent Policy DB (được quản lý bởi agent-policy-service)
+\`\`\`
+
+## 13. Ứng dụng Cấu hình Shell (Shell Config Application)
+
+Ứng dụng này bao gồm \`Shell Config Service\` (Backend), \`Shell App User\` và \`Shell App Admin\` (là các Frontend chính), cùng với \`Shell Config DB\`.
+
+\`\`\`
+/project-root
+├── services/
+│   └── shell-config-service/                       # Mã nguồn của Dịch vụ Cấu hình Shell
+│       ├── src/
+│       │   ├── api/
+│       │   │   ├── config_controller.py
+│       │   │   └── health_check_controller.py
+│       │   ├── core/
+│       │   │   └── config_manager.py
+│       │   ├── models/
+│       │   │   └── app_config.py
+│       │   ├── repositories/                       # Lớp tương tác với Shell Config DB
+│       │   │   └── config_repository.py
+│       │   ├── config.py
+│       │   └── main.py
+│       ├── tests/
+│       ├── Dockerfile
+│       ├── requirements.txt
+│       ├── .env.example
+│       └── README.md
+│
+├── frontend/
+│   ├── shell-app-user/                             # Ứng dụng Frontend chính cho người dùng cuối
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/                                    # Mã nguồn chính của ứng dụng Frontend
+│   │   │   ├── assets/
+│   │   │   ├── components/
+│   │   │   ├── pages/                              # Trang chủ, trang cài đặt cá nhân
+│   │   │   │   └── UserDashboardPage.js
+│   │   │   ├── services/                           # Tương tác với Shell Config Service API
+│   │   │   │   └── shell.config.api.js
+│   │   │   ├── store/                              # Quản lý trạng thái cấu hình
+│   │   │   └── App.js
+│   │   ├── .env
+│   │   ├── .env.production
+│   │   ├── package.json
+│   │   └── README.md
+│   └── shell-app-admin/                            # Ứng dụng Frontend chính cho quản trị viên
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý cấu hình toàn hệ thống
+│       │   │   └── GlobalConfigPage.js
+│       │   ├── services/                           # Tương tác với Shell Config Service API (Admin)
+│       │   │   └── admin.shell.config.api.js
+│       │   ├── store/
+│       │   └── App.js
+│       ├── .env
+│       ├── .env.production
+│       ├── package.json
+│       └── README.md
+│
+└── # Database: Shell Config DB (được quản lý bởi shell-config-service)
+\`\`\`
+
+## 14. Ứng dụng Quản trị Cấu hình Shell (Shell Config Admin Frontend)
+
+Ứng dụng này là một Frontend độc lập, chuyên biệt cho việc quản lý cấu hình của hệ thống Shell, không thuộc \`Shell App Admin\`.
+
+\`\`\`
+/project-root
+├── frontend/
+│   └── shell-config-admin-frontend/                # Giao diện quản trị cấu hình Shell độc lập
+│       ├── public/
+│       │   └── index.html
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── pages/                              # Trang quản lý các thiết lập cấu hình, người dùng, quyền hạn
+│       │   │   └── ConfigManagementPage.js
+│       │   ├── services/                           # Tương tác với Shell Config Service API (Admin)
+│       │   │   └── shell.config.admin.api.js
+│       │   ├── store/
+│       │   └── App.js
+│       ├── .env
+│       ├── .env.production
+│       ├── package.json
+│       └── README.md
+\`\`\`
+
+## Lưu ý quan trọng
+
+**Các ví dụ về ngôn ngữ/framework** (Python, Node.js, Go, Java) chỉ mang tính minh họa. Bạn có thể sử dụng ngôn ngữ/framework phù hợp cho từng dịch vụ.
+
+**Cấu trúc \`src/\`** bên trong mỗi Microservice và Frontend có thể thay đổi tùy theo framework và quy ước của đội phát triển, nhưng các thư mục như \`api/controllers\`, \`core/services\`, \`models\`, \`repositories\`, \`pages\`, \`components\` là khá phổ biến.
+
+**Các file \`.env\`** và \`.env.production\` trong Frontend là ví dụ về cách quản lý biến môi trường cho các môi trường khác nhau. Các biến này sẽ được build vào ứng dụng Frontend.
+
+Tài liệu này cung cấp một cái nhìn sâu sắc về cách tổ chức mã nguồn cho từng ứng dụng độc lập, giúp bạn dễ dàng phát triển và quản lý dự án Microservice của mình.`
+                }
+            };
+
+            // Hàm render nội dung tài liệu
+            const renderDocumentationContent = (content) => {
+                const lines = content.split('\n');
+                const elements = [];
+                let currentElement = '';
+                let inCodeBlock = false;
+                let codeBlockContent = '';
+
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    
+                    if (line.startsWith('```')) {
+                        if (inCodeBlock) {
+                            elements.push(React.createElement('pre', { key: i }, codeBlockContent));
+                            codeBlockContent = '';
+                            inCodeBlock = false;
+                        } else {
+                            if (currentElement) {
+                                elements.push(React.createElement('p', { key: i - 1 }, currentElement));
+                                currentElement = '';
+                            }
+                            inCodeBlock = true;
+                        }
+                    } else if (inCodeBlock) {
+                        codeBlockContent += line + '\n';
+                    } else if (line.startsWith('# ')) {
+                        if (currentElement) {
+                            elements.push(React.createElement('p', { key: i - 1 }, currentElement));
+                            currentElement = '';
+                        }
+                        elements.push(React.createElement('h1', { key: i }, line.substring(2)));
+                    } else if (line.startsWith('## ')) {
+                        if (currentElement) {
+                            elements.push(React.createElement('p', { key: i - 1 }, currentElement));
+                            currentElement = '';
+                        }
+                        elements.push(React.createElement('h2', { key: i }, line.substring(3)));
+                    } else if (line.startsWith('### ')) {
+                        if (currentElement) {
+                            elements.push(React.createElement('p', { key: i - 1 }, currentElement));
+                            currentElement = '';
+                        }
+                        elements.push(React.createElement('h3', { key: i }, line.substring(4)));
+                    } else if (line.trim() === '') {
+                        if (currentElement) {
+                            elements.push(React.createElement('p', { key: i }, currentElement));
+                            currentElement = '';
+                        }
+                    } else {
+                        currentElement += (currentElement ? ' ' : '') + line;
+                    }
+                }
+                
+                if (currentElement) {
+                    elements.push(React.createElement('p', { key: lines.length }, currentElement));
+                }
+
+                return elements;
+            };
+
             return (
                 <div>
                     {/* Navigation */}
@@ -565,67 +1752,193 @@
                         </div>
                     </nav>
 
-                    {/* Hero Section */}
-                    <section className="hero">
-                        <div className="hero-content">
-                            <div className="hero-text">
-                                <h1>Hệ thống Quản lý<br/>Nhật ký Thi công<br/>Chuyên nghiệp</h1>
-                                <p>
-                                    Giải pháp số hóa toàn diện cho việc quản lý dự án xây dựng, 
-                                    từ lập kế hoạch đến theo dõi tiến độ và công theo chuẩn Việt Nam
-                                </p>
-                                <div className="hero-buttons">
-                                    <a href="#" className="btn-primary">Bắt đầu miễn phí</a>
-                                    <a href="#" className="btn-secondary">Xem demo</a>
+                    {currentPage === 'home' && (
+                        <>
+                            {/* Hero Section */}
+                            <section className="hero">
+                                <div className="hero-content">
+                                    <div className="hero-text">
+                                        <h1>Hệ thống Quản lý<br/>Nhật ký Thi công<br/>Chuyên nghiệp</h1>
+                                        <p>
+                                            Giải pháp số hóa toàn diện cho việc quản lý dự án xây dựng, 
+                                            từ lập kế hoạch đến theo dõi tiến độ và công theo chuẩn Việt Nam
+                                        </p>
+                                        <div className="hero-buttons">
+                                            <a href="#" className="btn-primary">Bắt đầu miễn phí</a>
+                                            <a href="#" className="btn-secondary">Xem demo</a>
+                                        </div>
+                                    </div>
+                                    <div className="hero-video">
+                                        <div className="video-placeholder">
+                                            <div className="play-icon"></div>
+                                            <p>Video giới thiệu hệ thống</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="hero-video">
-                                <div className="video-placeholder">
-                                    <div className="play-icon"></div>
-                                    <p>Video giới thiệu hệ thống</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                            </section>
 
-                    {/* Features Section */}
-                    <section className="features">
-                        <h2>Tính năng nổi bật</h2>
-                        <p className="features-subtitle">
-                            Hệ thống quản lý dự án xây dựng toàn diện với các công cụ chuyên nghiệp
-                        </p>
-                        <div className="features-grid">
-                            <div className="feature-card">
-                                <div className="feature-icon">📊</div>
-                                <h3>Quản lý Dự án</h3>
-                                <p>
-                                    Tạo và quản lý nhiều dự án xây dựng, phân 
-                                    chia công việc và theo dõi tiến độ một cách 
-                                    khoa học.
+                            {/* Features Section */}
+                            <section className="features">
+                                <h2>Tính năng nổi bật</h2>
+                                <p className="features-subtitle">
+                                    Hệ thống quản lý dự án xây dựng toàn diện với các công cụ chuyên nghiệp
                                 </p>
-                                <a href="#" className="feature-link">Tìm hiểu thêm →</a>
+                                <div className="features-grid">
+                                    <div className="feature-card">
+                                        <div className="feature-icon">📊</div>
+                                        <h3>Quản lý Dự án</h3>
+                                        <p>
+                                            Tạo và quản lý nhiều dự án xây dựng, phân 
+                                            chia công việc và theo dõi tiến độ một cách 
+                                            khoa học.
+                                        </p>
+                                        <a href="#" className="feature-link">Tìm hiểu thêm →</a>
+                                    </div>
+                                    <div className="feature-card">
+                                        <div className="feature-icon">📝</div>
+                                        <h3>Nhật ký Thi công</h3>
+                                        <p>
+                                            Tạo nhật ký thi công theo chuẩn Việt Nam với đầy đủ thông tin về thời tiết, 
+                                            nhân lực và tiến độ hàng ngày.
+                                        </p>
+                                        <a href="#" className="feature-link">Tìm hiểu thêm →</a>
+                                    </div>
+                                    <div className="feature-card">
+                                        <div className="feature-icon">👥</div>
+                                        <h3>Quản lý Nhóm</h3>
+                                        <p>
+                                            Phân quyền người dùng theo vai trò: Admin, 
+                                            Manager, User với chức năng phù hợp cho từng 
+                                            nhóm.
+                                        </p>
+                                        <a href="#" className="feature-link">Tìm hiểu thêm →</a>
+                                    </div>
+                                </div>
+                            </section>
+                        </>
+                    )}
+
+                    {currentPage === 'api' && (
+                        <div className="docs-layout">
+                            <div className="docs-sidebar">
+                                <div className="docs-sidebar-header">
+                                    <h3 className="docs-sidebar-title">📚 Tài liệu Hệ thống</h3>
+                                </div>
+                                <nav className="docs-nav">
+                                    <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Kiến trúc</div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'overview' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('overview')}
+                                        >
+                                            📁 Tổng quan Microservice
+                                        </div>
+                                        <div 
+                                            className={`docs-nav-item ${activeDocTab === 'details' ? 'active' : ''}`}
+                                            onClick={() => setActiveDocTab('details')}
+                                        >
+                                            🏗️ Chi tiết Ứng dụng
+                                        </div>
+                                    </div>
+                                    <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Hướng dẫn</div>
+                                        <div className="docs-nav-item">
+                                            🚀 Bắt đầu nhanh
+                                        </div>
+                                        <div className="docs-nav-item">
+                                            ⚙️ Cấu hình
+                                        </div>
+                                        <div className="docs-nav-item">
+                                            🔧 Triển khai
+                                        </div>
+                                    </div>
+                                </nav>
                             </div>
-                            <div className="feature-card">
-                                <div className="feature-icon">📝</div>
-                                <h3>Nhật ký Thi công</h3>
-                                <p>
-                                    Tạo nhật ký thi công theo chuẩn Việt Nam với đầy đủ thông tin về thời tiết, 
-                                    nhân lực và tiến độ hàng ngày.
-                                </p>
-                                <a href="#" className="feature-link">Tìm hiểu thêm →</a>
-                            </div>
-                            <div className="feature-card">
-                                <div className="feature-icon">👥</div>
-                                <h3>Quản lý Nhóm</h3>
-                                <p>
-                                    Phân quyền người dùng theo vai trò: Admin, 
-                                    Manager, User với chức năng phù hợp cho từng 
-                                    nhóm.
-                                </p>
-                                <a href="#" className="feature-link">Tìm hiểu thêm →</a>
+                            
+                            <div className="docs-content">
+                                <div className="docs-content-inner">
+                                    <div className="docs-breadcrumb">
+                                        <span 
+                                            className="docs-breadcrumb-item"
+                                            onClick={() => setCurrentPage('home')}
+                                        >
+                                            Trang chủ
+                                        </span>
+                                        <span className="docs-breadcrumb-separator">/</span>
+                                        <span className="docs-breadcrumb-item">Tài liệu</span>
+                                        <span className="docs-breadcrumb-separator">/</span>
+                                        <span>{documentationContent[activeDocTab].title}</span>
+                                    </div>
+                                    
+                                    <article className="docs-article">
+                                        {renderDocumentationContent(documentationContent[activeDocTab].content)}
+                                    </article>
+                                </div>
                             </div>
                         </div>
-                    </section>
+                    )}
+
+                    {currentPage === 'contact' && (
+                        <div className="docs-layout">
+                            <div className="docs-sidebar">
+                                <div className="docs-sidebar-header">
+                                    <h3 className="docs-sidebar-title">📞 Liên hệ & Hỗ trợ</h3>
+                                </div>
+                                <nav className="docs-nav">
+                                    <div className="docs-nav-section">
+                                        <div className="docs-nav-section-title">Thông tin</div>
+                                        <div className="docs-nav-item active">
+                                            📧 Thông tin liên hệ
+                                        </div>
+                                        <div className="docs-nav-item">
+                                            💬 Hỗ trợ kỹ thuật
+                                        </div>
+                                        <div className="docs-nav-item">
+                                            📋 Báo cáo lỗi
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                            
+                            <div className="docs-content">
+                                <div className="docs-content-inner">
+                                    <div className="docs-breadcrumb">
+                                        <span 
+                                            className="docs-breadcrumb-item"
+                                            onClick={() => setCurrentPage('home')}
+                                        >
+                                            Trang chủ
+                                        </span>
+                                        <span className="docs-breadcrumb-separator">/</span>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                    
+                                    <article className="docs-article">
+                                        <h1>📞 Liên hệ với chúng tôi</h1>
+                                        <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn. Hãy liên hệ với chúng tôi qua các kênh dưới đây:</p>
+                                        
+                                        <h2>Thông tin liên hệ</h2>
+                                        <p><strong>Email:</strong> support@hdtai.com</p>
+                                        <p><strong>Điện thoại:</strong> +84 123 456 789</p>
+                                        <p><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</p>
+                                        
+                                        <h2>Giờ làm việc</h2>
+                                        <p>Thứ 2 - Thứ 6: 8:00 - 17:30</p>
+                                        <p>Thứ 7: 8:00 - 12:00</p>
+                                        <p>Chủ nhật: Nghỉ</p>
+                                        
+                                        <h2>Hỗ trợ kỹ thuật</h2>
+                                        <p>Đối với các vấn đề kỹ thuật, vui lòng gửi email kèm theo:</p>
+                                        <ul>
+                                            <li>Mô tả chi tiết vấn đề</li>
+                                            <li>Ảnh chụp màn hình (nếu có)</li>
+                                            <li>Thông tin hệ thống đang sử dụng</li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     {/* Footer */}
                     <footer className="footer">
