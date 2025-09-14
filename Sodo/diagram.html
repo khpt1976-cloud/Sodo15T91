@@ -34,7 +34,7 @@
         /* Toolbar công cụ */
         .toolbar {
             position: fixed;
-            top: 70px;
+            top: 20px;
             right: 20px;
             background: white;
             border-radius: 10px;
@@ -104,7 +104,7 @@
         /* Container cho diagram có thể zoom và pan */
         .diagram-container {
             position: absolute;
-            top: 70px;
+            top: 0;
             left: 0;
             right: 0;
             bottom: 0;
@@ -171,90 +171,35 @@
             display: none !important;
         }
         
-        /* Navigation Bar */
-        .navbar {
+        /* Home Button */
+        .home-btn {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: #1a2332;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            display: flex;
-            align-items: center;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            flex: 1;
-        }
-        
-        .navbar-brand .logo {
-            width: 32px;
-            height: 32px;
-            background: #00bcd4;
-            border-radius: 6px;
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .navbar-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-            flex: 2;
-            justify-content: center;
-        }
-        
-        .navbar-menu li a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        
-        .navbar-menu li a:hover {
-            color: #00bcd4;
-        }
-        
-        .navbar-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .btn-login {
-            background: #00bcd4;
-            color: white;
-            padding: 8px 16px;
             border: none;
-            border-radius: 4px;
-            text-decoration: none;
+            border-radius: 12px;
+            padding: 12px 20px;
             font-size: 14px;
-            transition: background 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
         }
         
-        .btn-login:hover {
-            background: #00acc1;
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
         
-        /* Điều chỉnh body để không bị che bởi navbar */
-        body {
-            padding-top: 60px;
+        .home-btn:active {
+            transform: translateY(0);
         }
         
         /* Documentation Page */
@@ -497,22 +442,10 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="#" class="navbar-brand">
-            <div class="logo">MS</div>
-            Microservice Architecture
-        </a>
-        
-        <ul class="navbar-menu">
-            <li><a href="#" onclick="showDiagram()">Trang chủ</a></li>
-            <li><a href="#" onclick="showDiagram()">Sơ đồ</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>
-        
-        <div style="flex: 1;"></div>
-
-    </nav>
+    <!-- Home Button -->
+    <a href="sodochuan.html" class="home-btn">
+        🏠 Trang chủ
+    </a>
 
     <!-- Documentation Page -->
     <div class="doc-container" id="docContainer">
